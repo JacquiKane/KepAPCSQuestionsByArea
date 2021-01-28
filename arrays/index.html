@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="algavg.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Arrays</title>
+    <style>
+        .boldface {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .boldfaceinfo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: large;
+        }
+
+        .boldfaceemphasis {
+            font-size: x-large;
+        }
+
+        .imgAni {
+            border: 5px dashed goldenrod;
+            padding: 5px;
+            width: 500px;
+            height: 200px;
+        }
+
+        .buttonsize {
+            width: 100%;
+        }
+
+        body {
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12 boldfont">
+                <h1 class="boldface">
+                    Solving <span class="boldfaceemphasis">Array
+                    </span> Problems
+                </h1>
+                <p>Use the links to expand questions and see the solutions.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse"
+                            data-target="#accessingarrays" aria-expanded="Link to class header">
+                            Accessing Arrays >>
+                        </button>
+                    </div>
+
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse"
+                            data-target="#dynamicchanges" aria-expanded="Link to class header">
+                            Dynamic Changes >>
+                        </button>
+                    </div>
+
+                </section>
+            </div>
+            <div class="col-md-8">
+                <div id="accessingarrays" class="collapse mb-3">
+                    <br>
+                    <h4 class="boldface">Accessing Arrays</h4>
+                    <p>
+                        Arrays are accessed with an index or subscript and are zero-based - the first index is at 0.
+                    </p>
+                    <p>Arrays have to be newed up (instantiated)</p>
+                    <p>
+                        int[] nums = {1,44,55,77,3};<br>
+                        int temp = nums[0];<br>
+                    </p>
+                    <p>
+                        temp has a value of 1.
+                    </p>
+                    <p>The largest viable index is at <i>nums.length - 1</i>.
+                    </p>
+                    <p>
+                        nums[nums.length-1] is 3.
+                    </p>
+                    <p>Any index value less than 0 or greater than or equal to nums.length
+                        will result in an <i>array index out of bounds error</i></p>
+                    <table>
+                        <tr>
+                            <td>
+                                Which of the following code snippets fills the 3rd and last
+                                elements of the array,<br>
+                                int[] nums = new int[7];
+                            </td>
+                        </tr>
+                        <tr>
+                            <ol>
+                                <li>nums[3] = 1; nums[nums.length-1] = 11;
+
+                                </li>
+                                <li>nums[2] = 11; nums[7]=11;</li>
+                            </ol>
+                        </tr>
+                        <tr>
+                            <td>Option 1, because the array starts at index 0, the third element is at nums[2].
+                            The last element should be referenced using the length 
+                            property of the array, less 1.</td> </tr>
+                    </table>
+                </div>
+                <div id="dynamicchanges" class="collapse mb-3">
+                    <br>
+                    <h4 class="boldface">Dynamic Changes</h4>
+                    <p>Sometimes the content of the array changes 
+                        as it is being processed, for instance by a loop.
+                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                int[] nums = {1,44,55,77,3};<br>
+        
+                                for (int index = nums.length-1; <br>
+                                index > 0; index--) {<br>
+                                &nbsp;&nbsp;   if (nums[index-1] > nums[index])<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;         nums[index] += 2;<br>
+                                &nbsp;&nbsp;}
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div>
+                    <br>
+                    <h4 class="boldfaceinfo">
+                        <ul>
+                            <li>Can you create the code corresponding to this algorithm? </li>
+                            <li> Can you use the same algorithm with objects?</li>
+                        </ul>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>
