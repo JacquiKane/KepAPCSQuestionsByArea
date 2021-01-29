@@ -39,8 +39,59 @@
         body {
             background-color: lightblue;
             font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .questiondiv {
+            border: 5px solid blue;
+            width: 90%;
+            background-color: aliceblue;
+            margin: 2%;
+            padding: 2%;
+        }
+
+        .questioncolumn {
+            border: 5px solid white;
+        }
+
+        .questionanswer {
+            font-style: italic;
+            color: darkblue;
+        }
+.questionmarker {
+color: darkblue;
+}
+        .popover {
+            max-width: 40%;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table td {
+            border: 2px solid darkblue;
+            text-align: left;
+            padding-left: 3px;
+        }
+
+        table tr:first-child td {
+            border-top: 0;
+        }
+
+        table tr td:first-child {
+            border-left: 0;
+        }
+
+        table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        table tr td:last-child {
+            border-right: 0;
         }
     </style>
+
 </head>
 
 <body>
@@ -74,25 +125,26 @@
                 <section>
                     <div>
                         <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse"
-                            data-target="#accessingarrays" aria-expanded="Link to class header">
+                            data-target="#accessingarrays" data-placement="top" aria-expanded="Link to class header">
                             Accessing Arrays >>
                         </button>
                     </div>
                 </section>
-                    <section>
-                        <div>
-                            <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse"
-                                data-target="#usingloopswitharrays" aria-expanded="Link to class header">
-                                Using Loops With Arrays >>
-                            </button>
-                        </div>
-    
-              
-                </section>
                 <section>
                     <div>
                         <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse"
-                            data-target="#dynamicchanges" aria-expanded="Link to class header">
+                            data-target="#usingloopswitharrays" aria-expanded="Link to class header">
+                            Using Loops With Arrays >>
+                        </button>
+                    </div>
+
+
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 
+                        buttonsize" data-toggle="collapse" data-target="#dynamicchanges"
+                            aria-expanded="Link to class header">
                             Dynamic Changes >>
                         </button>
                     </div>
@@ -134,7 +186,7 @@
                         </button>
                     </div>
 
-                </section>   
+                </section>
                 <section>
                     <div>
                         <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse"
@@ -143,7 +195,7 @@
                         </button>
                     </div>
 
-                </section> 
+                </section>
                 <section>
                     <div>
                         <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse"
@@ -152,88 +204,294 @@
                         </button>
                     </div>
 
-                </section>             
+                </section>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8  questioncolumn">
+
                 <div id="accessingarrays" class="collapse mb-3">
                     <br>
-                    <h4 class="boldface">Accessing Arrays</h4>
-                    <p>
-                        Arrays are accessed with an index or subscript and are zero-based - the first index is at 0.
-                    </p>
-                    <p>Arrays have to be newed up (instantiated)</p>
-                    <p>
-                        int[] nums = {1,44,55,77,3};<br>
-                        int temp = nums[0];<br>
-                    </p>
-                    <p>
-                        temp has a value of 1.
-                    </p>
-                    <p>The largest viable index is at <i>nums.length - 1</i>.
-                    </p>
-                    <p>
-                        nums[nums.length-1] is 3.
-                    </p>
-                    <p>Any index value less than 0 or greater than or equal to nums.length
-                        will result in an <i>array index out of bounds error</i></p>
-                    <table>
-                        <tr>
-                            <td>
-                                Which of the following code snippets fills the 3rd and last
-                                elements of the array,<br>
-                                int[] nums = new int[7];
-                            </td>
-                        </tr>
-                        <tr>
-                            <ol>
-                                <li>nums[3] = 1; nums[nums.length-1] = 11;
+                    <div class="questiondiv">
+                        <h4 class="boldface">Accessing Arrays</h4>
+                        <p>
+                            Which of the following code snippets populates the 3rd and last
+                            elements of the array?<br>
+                            int[] nums = new int[7];
+                        </p>
+                        <ol>
+                            <li>nums[2] = 1; nums[nums.length-1] = 11;
 
-                                </li>
-                                <li>nums[2] = 11; nums[7]=11;</li>
-                            </ol>
-                        </tr>
-                        <tr>
-                            <td>Option 1, because the array starts at index 0, the third element is at nums[2].
-                            The last element should be referenced using the length 
-                            property of the array, less 1.</td> </tr>
-                    </table>
+                            </li>
+                            <li>nums[3] = 11; nums[7]=11;</li>
+                        </ol>
+                        <button type="button" class="btn btn-info" id="accessingarrays" data-toggle="popover"
+                            data-placement="top" title="Arrays, Accessing Elements" html="true">Analysis</button>
+                    </div>
+</div>
+
+<!-- Using LOOPS WITH ARRAYS -->
+<div id="usingloopswitharrays" class="collapse mb-3">
+    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Using Loops With Arrays</h4>
+                        <p> Given array nums, declared and initialized with an initializer list,<br>
+                            int[] nums = {13,44,1,23,99,11,77};<br></p>
+                        <p class="questionmarker">
+                            (1) What is the fourth item printed?
+                        </p>
+                        <p>
+
+                            for (int num : nums)<br>
+                            System.out.println(num);
+                        </p>
+                        <p  class="questionmarker">(2) How many times is <i>Fizz</i>
+                            printed?</p>
+                        <p>
+                            for (int index = 0; index &lt; nums.length; index++) {<br>
+                            &nbsp;&nbsp;if (nums[index] % 3 == 1)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Fizz");<br>
+                            &nbsp;&nbsp;else<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Buzz");<br>
+                            }
+                        </p>
+                        <p  class="questionmarker">(3) How many elements are printed?</p>
+                        <p>int index = 2;<br>
+                            while (index &lt; nums.length-1) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(nums[index]);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;index++;
+                            &nbsp;&nbsp;&nbsp;&nbsp;}
+                        </p>
+                        <button type="button" 
+                        class="btn btn-info" 
+                        id="usingloopswitharrays" 
+                        data-toggle="popover"
+                            data-placement="top" 
+                            title="Arrays, Using Loops"
+                             html="true">Analysis</button>
+                    </div>
+</div>
+
+                    <div id="dynamicchanges" class="collapse mb-3 questiondiv">
+                        <br>
+                        <h4 class="boldface">Dynamic Changes</h4>
+                        <p>What is printed as a result of the following code?
+                        </p>
+                        <table>
+                            <tr>
+                                <td>
+                                    int[] nums = {1,44,55,77,3};<br>
+
+                                    for (int index = nums.length-1;
+                                    index > 0; index--) {<br>
+                                    &nbsp;&nbsp; if (nums[index-1] > nums[index])<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; nums[index-1] -= 25;<br>
+                                    &nbsp;&nbsp;}
+                                    for (int num: nums)<br>
+                                    &nbsp;&nbsp;System.out.print(num + " ");<br>
+                                    <button type="button" class="btn btn-info" id="dynamicchangingarray"
+                                        data-toggle="popover" data-placement="bottom"
+                                        title="Arrays, Dynamically Changing" html="true">Analysis</button>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <!-- OUT OF BOUNDS ERRORS -->
+                    <div id="outofboundserrors" 
+                    class="collapse mb-3">
+                        <br>
+                        <div class="questiondiv">
+                            <h4 class="boldface">Using Loops With Arrays</h4>
+                            <p class="questionmarker">
+                                What impact does the following code have??<br>
+                            </p>
+                            <p>
+                                SoccerPlayer[] team = new SoccerPlayer[3];<br>
+                                SoccerPlayer player = team[3];
+                            </p>
+                            <button type="button" 
+                            class="btn btn-info" 
+                            id="arrayoutofboundserror" 
+                            data-toggle="popover"
+                                data-placement="bottom" 
+                                title="Arrays, Out Of Bounds Errors" html="true">Analysis</button>
+                        </div>
+    </div>
+
+
+                    <!-- Arrays of objects -->
+                    <div id="arraysofobjects" 
+                    class="collapse mb-3">
+                        <br>
+                        <div class="questiondiv">
+                            <h4 class="boldface">Arrays Of Objects</h4>
+                            <p class="questionmarker">
+                                Class SoccerPlayer has attribute <i>name</i>, 
+                                with setter <i>setName(String name)</i>  and getter, <i>getName()</i>?<br>
+                         The array is instantiated or newed up,<br>
+                         SoccerPlayer[] team = new SoccerPlayer[11];<br>
+                           so array, team, stores 11 instances of class SoccerPlayer.</p>
+                            <p class="questionmarker">(1) What is the impact of 
+
+                                team[0] = new SoccerPlayer();<br>
+                                team[0].setName("Harry Kane");<br>
+                                team[team.length-1].setName("Troy Parrott");
+                            </p>
+                            <p class="questionmarker">
+                                (2) Assuming that the array has been populated with SoccerPlayer instances, and all 
+                                the attributes have been initialized 
+                                what is the result of,
+                            </p>
+                            <p>for (SoccerPlayer player: team)<br>
+                            &nbsp;&nbsp;&nbsp;System.out.println(player.getName());</p>
+                            <button type="button" 
+                            class="btn btn-info" 
+                            id="arraysofobjectscaller" 
+                            data-toggle="popover"
+                                data-placement="bottom" 
+                                title="Arrays, Objects" html="true">Analysis</button>
+                        </div>
+    </div>
+
+
                 </div>
-                <div id="dynamicchanges" class="collapse mb-3">
-                    <br>
-                    <h4 class="boldface">Dynamic Changes</h4>
-                    <p>Sometimes the content of the array changes 
-                        as it is being processed, for instance by a loop.
-                    </p>
-                    <table>
-                        <tr>
-                            <td>
-                                int[] nums = {1,44,55,77,3};<br>
-        
-                                for (int index = nums.length-1; <br>
-                                index > 0; index--) {<br>
-                                &nbsp;&nbsp;   if (nums[index-1] > nums[index])<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;         nums[index] += 2;<br>
-                                &nbsp;&nbsp;}
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-
-              
             </div>
-        </div>
+<!-- *************************   POPOVER CONTENT  ********************************-->
+            <!-- Popover for ACCESSING ARRAYS -->
+            <div id="accessingarrayspopup" style="display: none">
+                <p>(1), because the array starts at index 0, the third element is at nums[2]. For best practice, the
+                    last element should be referenced using the length property of the array, less 1. In (2), nums[7]
+                    causes an out of bounds error.</p>
+            </div>
+ <!-- END Popover for ACCESSING ARRAYS -->
+  <!-- Popover for DYNAMICALLY CHANGING ARRAYS -->
+            <div id="dynamicchangingarraypopup" style="display: none">
+                <div>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
+                    <table>
+                        <tr>
+                            <td>Array after iteration</td>
+                            <td>index</td>
+                            <td>Action in loop body</td>
+                        </tr>
+                        <tr>
+                            <td>1, 44, 55, 52, 3</td>
+                            <td>4
+                            </td>
+                            <td>77 &gt; 3? &check; nums[3] &larr; 77 - 25</td>
+                        </tr>
+                        <tr>
+                            <td>1, 44, 30, 52, 3</td>
+                            <td>3
+                            </td>
+                            <td>77 &gt; 3? &check; nums[3] &larr; 55 - 25</td>
+                        </tr>
+                        <tr>
+                            <td>1, 19, 30, 52, 3</td>
+                            <td>2
+                            </td>
+                            <td>44 &gt; 30? &check; nums[1] &larr; 44 - 25</td>
+                        </tr>
+                        <tr>
+                            <td>1, 19, 30, 52, 3</td>
+                            <td>1
+                            </td>
+                            <td>1 &gt; 19? &#x2718; nums[1] stays as is</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+ <!-- END Popover for DYNAMICALLY CHANGING ARRAYS -->
+            <!-- Popover for USING LOOPS WITH ARRAYS -->
+            <div id="usingloopswitharrayspopup" style="display: none">
+                <p>(1) The fourth item printed is 23. The <i>enhanced for loop</i> cycles through each element in sequence, stopping at the last one.</p>
+                <p>(2) <i>Fizz</i>  is printed 6 times. The <i>regular for loop</i> cycles through each item based on the value of the sentry or loop variable, index. 
+                All of the odd numbers in the array are printed, like nums[0] is 13, 13 % 2 is 1. Same for the elements with values 1,23,99,11,77.
+                </p>
+                <p>(3) 4 elements are printed. The <i>while loop</i> variable starts at 2,
+                and each time through the loop it gets incremented by 1, stopping at <i>nums.length - 1</i>, 
+                which is 5. The element at index 2 is 1, the elment at index 3 is 23, then 99, and finally the element at index 5 is 11.</p>
+            </div>
+ <!-- END Popover for USING LOOPS WITH ARRAYS -->
+            <!-- Popover for OUT OF BOUNDS ERROR -->
+            <div id="arrayoutofboundserrorpopup" style="display: none">
+                <p>This causes an <i>array index out of bounds error</i>. The valid index values for an array are from 0, first element, to the last element, index value of the number of elements in the array, less 1. Here, the number 
+                    of elements in the array is 3, so the highest viable index is 2. </p>
+            </div>
+ <!-- END Popover for OUT OF BOUNDS ERROR -->
+ <!-- END Popover for USING LOOPS WITH ARRAYS -->
+            <!-- Popover for ARRAYS OF OBJECTS  -->
+            <div id="arraysofobjectspopup" style="display: none">
+                <p>(1) The first element is newed up and appropriately accessed, to set the attribute, <i>name</i>, to "Harry Kane".<i>array index out of bounds error</i>. The valid index values for an array are from 0, first element, to the last element, index value of the number of elements in the array, less 1. Here, the number 
+                   </p>
+                   <p>An attempt is made to set the last element's name to "Troy Parrott", but this results in an 
+                       <i>access violation</i> as that index position in the array does not have an 
+                       instance of class SoccerPlayer. 
+                       When an array of objects is newed up, the elements all default to the null reference, null.</p>
+<p>(2) All the player names are printed. We are told that the array has been populated with valid instances, and that the attributes have been set.</p>
+                    </div>
+ <!-- END Popover for ARRAYS OF OBJECTS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js "
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+                crossorigin="anonymous "></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js "
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+                crossorigin="anonymous "></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+                crossorigin="anonymous "></script>
 
+            <!-- Pop overs -->
+            <script>
+                $(document).ready(function () {
+                    $('#accessingarrays').popover({
+                        html: true,
+                        content: function () {
+                            return $('#accessingarrayspopup').html();
+                        }
+                    });
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $('#dynamicchangingarray').popover({
+                        html: true,
+                        content: function () {
+                            return $('#dynamicchangingarraypopup').html();
+                        }
+                    });
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $('#usingloopswitharrays').popover({
+                        html: true,
+                        content: function () {
+                            return $('#usingloopswitharrayspopup').html();
+                        }
+                    });
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $('#arrayoutofboundserror').popover({
+                        html: true,
+                        content: function () {
+                            return $('#arrayoutofboundserrorpopup').html();
+                        }
+                    });
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $('#arraysofobjectscaller').popover({
+                        html: true,
+                        content: function () {
+                            return $('#arraysofobjectspopup').html();
+                        }
+                    });
+                });
+            </script>
 </body>
 
 </html>
