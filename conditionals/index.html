@@ -128,19 +128,11 @@
                         </button>
                     </div>
                 </section>
-                <section>
-                    <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#usingloopswitharrays" aria-expanded="Link to class header">
-                            Default >>
-                        </button>
-                    </div>
 
-
-                </section>
                 <section>
                     <div>
                         <button class=" btn btn-primary mb-3 
-                        buttonsize" data-toggle="collapse" data-target="#dynamicchanges" aria-expanded="Link to class header">
+                        buttonsize" data-toggle="collapse" data-target="#usingififversusifelse" aria-expanded="Link to class header">
                             if .. if or if .. else if >>
                         </button>
                     </div>
@@ -148,7 +140,7 @@
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#outofboundserrors" aria-expanded="Link to class header">
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#orderofevals" aria-expanded="Link to class header">
                             Order Of Evaluations >>
                         </button>
                     </div>
@@ -156,7 +148,7 @@
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#arraysofobjects" aria-expanded="Link to class header">
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#nestedif" aria-expanded="Nested if">
                             Nested Ifs >>
                         </button>
                     </div>
@@ -214,68 +206,142 @@
                             <br> }<br> else { <br>&nbsp;&nbsp;System.out.println("Buzz"); <br> &nbsp;&nbsp;}
                             <br>
                         </p>
+                        <p class="questionmarker">
+                            (3) What is printed if the value of index is reset?
+                        </p>
+                        <p>
+                            index = 2;<br> if (index > 5) {<br> &nbsp;&nbsp; System.out.println("Fizz");
+                            <br> else if (index &lt; 4) {<br> &nbsp;&nbsp; System.out.println("Pop");
+                            <br> }<br> else { <br>&nbsp;&nbsp;System.out.println("Buzz");
+                            <br> &nbsp;&nbsp;}
+                            <br>
+                        </p>
                         <button type="button" class="btn btn-info" id="flowofcontrolcaller" data-toggle="popover" data-placement="top" title="Conditionals, Flow Of Control" html="true">Analysis</button>
                     </div>
                 </div>
 
-                <!-- Using LOOPS WITH ARRAYS -->
-                <div id="usingloopswitharrays" class="collapse mb-3">
+                <!-- Using IF ... IF / IF ELSE IF -->
+                <div id="usingififversusifelse" class="collapse mb-3">
                     <br>
                     <div class="questiondiv">
-                        <h4 class="boldface">Using Loops With Arrays</h4>
-                        <p> Given array nums, declared and initialized with an initializer list,<br> int[] nums = {13,44,1,23,99,11,77};<br></p>
-                        <p class="questionmarker">
-                            (1) What is the fourth item printed?
+                        <h4 class="boldface">if .. if or if .. else if</h4>
+                        <p class="questionmarker"> (1) Variable, index, has a value of 4. What is printed? <br> (2) How many comparisons are made in (a) and in (b)?
+                            <br> (3) What is printed if index is not 5,4,3 or 2?
                         </p>
+
                         <p>
 
-                            for (int num : nums)<br> System.out.println(num);
+                            <table>
+                                <tr>
+                                    <td>(a)<br>if (index == 5) {<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Fizz");
+                                        <br> &nbsp;&nbsp;}
+                                        <br> if (index == 4) {<br> &nbsp;&nbsp;System.out.println("Buzz");
+                                        <br> &nbsp;&nbsp;}
+                                        <br> if (index == 3) {<br> &nbsp;&nbsp;System.out.println("Pop");
+                                        <br> &nbsp;&nbsp;}
+                                        <br> if (index == 2) {<br> &nbsp;&nbsp;System.out.println("Zip");
+                                        <br> &nbsp;&nbsp;}
+                                        <br>
+                                    </td>
+                                    <td style="padding-left: 5px;">
+                                        (b)<br>if (index == 5) {<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Fizz");
+                                        <br> &nbsp;&nbsp;}
+                                        <br> else if (index == 4) {<br> &nbsp;&nbsp;System.out.println("Buzz");
+                                        <br> &nbsp;&nbsp;}
+                                        <br> else if (index == 3) {<br> &nbsp;&nbsp;System.out.println("Pop");
+                                        <br> &nbsp;&nbsp;}
+                                        <br> else if (index == 2) {<br> &nbsp;&nbsp;System.out.println("Zip");
+                                        <br> &nbsp;&nbsp;}
+                                        <br> else {<br> System.out.println("No Match!");<br>&nbsp;&nbsp;}
+                                        <br>
+                                    </td>
+                                </tr>
+                            </table>
                         </p>
-                        <p class="questionmarker">(2) How many times is <i>Fizz</i> printed?
-                        </p>
-                        <p>
-                            for (int index = 0; index &lt; nums.length; index++) {<br> &nbsp;&nbsp;if (nums[index] % 3 == 1)<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Fizz");
-                            <br> &nbsp;&nbsp;else
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Buzz");
-                            <br> }
-                        </p>
-                        <p class="questionmarker">(3) How many elements are printed?</p>
-                        <p>int index = 2;<br> while (index &lt; nums.length-1) {<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(nums[index]);
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp;index++; &nbsp;&nbsp;&nbsp;&nbsp;}
-                        </p>
-                        <button type="button" class="btn btn-info" id="usingloopswitharrays" data-toggle="popover" data-placement="top" title="Arrays, Using Loops" html="true">Analysis</button>
+
+                        <button type="button" class="btn btn-info" id="usingififversusifelsecaller" data-toggle="popover" data-placement="top" title="if .. if, if .. else if" html="true">Analysis</button>
                     </div>
                 </div>
 
-                <div id="dynamicchanges" class="collapse mb-3 questiondiv">
+                <div id="orderofevals" class="collapse mb-3 questiondiv">
                     <br>
-                    <h4 class="boldface">Dynamic Changes</h4>
-                    <p>What is printed as a result of the following code?
+                    <h4 class="boldface">Order Of Evaluations</h4>
+                    <p class="questionmarker">(1) What is printed if <i>points</i> has a value of 65 ?<br> (2) How can the multi-way selection statement be modified to work correctly?
                     </p>
                     <table>
                         <tr>
                             <td>
-                                int[] nums = {1,44,55,77,3};<br> for (int index = nums.length-1; index > 0; index--) {<br> &nbsp;&nbsp; if (nums[index-1] > nums[index])<br> &nbsp;&nbsp;&nbsp;&nbsp; nums[index-1] -= 25;<br> &nbsp;&nbsp;}
-                                <br> for (int num: nums)<br> &nbsp;&nbsp;System.out.print(num + " ");<br>
-                                <button type="button" class="btn btn-info" id="dynamicchangingarray" data-toggle="popover" data-placement="bottom" title="Arrays, Dynamically Changing" html="true">Analysis</button>
+                                <table>
+                                    <tr>
+                                        <th>points</th>
+                                        <th> grade</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            50 - 59
+                                        </td>
+                                        <td>
+                                            D
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            60 - 79
+                                        </td>
+                                        <td>
+                                            C
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            80 - 89
+                                        </td>
+                                        <td>
+                                            B
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            90+
+                                        </td>
+                                        <td>
+                                            A
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="padding-left: 15px;">
+                                <p>
+                                    if (points &gt;= 80) {<br> &nbsp;&nbsp;System.out.println("B");
+                                    <br> }
+                                    <br> else if (points &gt;= 90) {<br> &nbsp;&nbsp;System.out.println("A");
+                                    <br> }
+                                    <br> else if (points &gt;= 50) {<br> &nbsp;&nbsp;System.out.println("D");
+                                    <br> }
+                                    <br> else {<br> &nbsp;&nbsp; System.out.println("C");<br> }
+                                </p>
                             </td>
                         </tr>
                     </table>
 
+                    <button type="button" class="btn btn-info" id="orderofevalscaller" data-toggle="popover" data-placement="top" title="Order Of Evaluations" html="true">Analysis</button>
                 </div>
 
-                <!-- OUT OF BOUNDS ERRORS -->
-                <div id="outofboundserrors" class="collapse mb-3">
+                <!-- NESTED IF -->
+                <div id="nestedif" class="collapse mb-3">
                     <br>
                     <div class="questiondiv">
-                        <h4 class="boldface">Out Of Bounds Errors</h4>
+                        <h4 class="boldface">Nested If</h4>
                         <p class="questionmarker">
-                            What impact does the following code have??<br>
+                            What is the final value of variable, counter?<br>
                         </p>
                         <p>
-                            SoccerPlayer[] team = new SoccerPlayer[3];<br> SoccerPlayer player = team[3];
+                            if (counter > 15 ) {<br> &nbsp;&nbsp;if (counter % 3 == 0) {<br> &nbsp;&nbsp;&nbsp;&nbsp;counter -= 4;<br> &nbsp;&nbsp; }<br> else {<br> &nbsp;&nbsp;&nbsp;&nbsp; counter += 2;<br> &nbsp;&nbsp;}
+                            <br> }
+                            <br> else {<br> &nbsp;&nbsp;counter = 0;<br> }
+                            <br>
                         </p>
-                        <button type="button" class="btn btn-info" id="arrayoutofboundserror" data-toggle="popover" data-placement="bottom" title="Arrays, Out Of Bounds Errors" html="true">Analysis</button>
+                        <button type="button" class="btn btn-info" id="nestedifcaller" data-toggle="popover" data-placement="bottom" title="Nested Ifs" html="true">Analysis</button>
                     </div>
                 </div>
 
@@ -414,66 +480,51 @@
             </div>
         </div>
         <!-- *************************   POPOVER CONTENT  ********************************-->
-        <!-- Popover for ACCESSING ARRAYS -->
+        <!-- Popover for FLOW OF CONTROL -->
         <div id="flowofcontrolpopup" style="display: none">
-            <p>(1) Nothing is printed beause the condition, index > 5, is false.</p>
-            <p>(2) The default, if the condition is false, is handled by the else branch. Buzz is printed.</p>
+            <p>(1) Nothing is printed beause the condition, <i>index &gt; 5</i>, is false.</p>
+            <p>(2) The condition, <i>index &gt; 5</i>, is false, so control flows to the else branch.
+                <i>Buzz</i> is printed.</p>
+            <p>(3) index is now 2, therefore <i>index</i> &gt; 5 is false, and <i>index &lt;4</i> is true. <i>Pop</i> is printed.</p>
         </div>
-        <!-- END Popover for ACCESSING ARRAYS -->
-        <!-- Popover for DYNAMICALLY CHANGING ARRAYS -->
-        <div id="dynamicchangingarraypopup" style="display: none">
+        <!-- END Popover for FLOW OF CONTROL -->
+        <!-- Popover for IF ... IF Vs IF .. ELSE IF -->
+        <div id="usingififversusifelsepopup" style="display: none">
             <div>
+                <p>(1) Buzz is printed, both in (a) and (b) as the condition <i>index == 4</i> evaluates to true.</p>
+                <p> (2)The sequence of singleton if statements (one way selection statements) causes comparisons to be made for 5,4,3,2. The use of the if..else if results in 2 comparisons only, as the multi-way selection exits when the condition
+                    <i>index == 4</i> evaluates to true.</p>
+                <p>(3) In (a), nothing is printed as none of the conditions associated with the ifs are true. In (b), "No Match" is printed. The <i>else</i> acts as the catch all, and control flows here if none of the preceeding conditions are true.
+                </p>
 
-                <table>
-                    <tr>
-                        <td>Array after iteration</td>
-                        <td>index</td>
-                        <td>Action in loop body</td>
-                    </tr>
-                    <tr>
-                        <td>1, 44, 55, 52, 3</td>
-                        <td>4
-                        </td>
-                        <td>77 &gt; 3? &check; nums[3] &larr; 77 - 25</td>
-                    </tr>
-                    <tr>
-                        <td>1, 44, 30, 52, 3</td>
-                        <td>3
-                        </td>
-                        <td>77 &gt; 3? &check; nums[3] &larr; 55 - 25</td>
-                    </tr>
-                    <tr>
-                        <td>1, 19, 30, 52, 3</td>
-                        <td>2
-                        </td>
-                        <td>44 &gt; 30? &check; nums[1] &larr; 44 - 25</td>
-                    </tr>
-                    <tr>
-                        <td>1, 19, 30, 52, 3</td>
-                        <td>1
-                        </td>
-                        <td>1 &gt; 19? &#x2718; nums[1] stays as is</td>
-                    </tr>
-                </table>
             </div>
         </div>
-        <!-- END Popover for DYNAMICALLY CHANGING ARRAYS -->
-        <!-- Popover for USING LOOPS WITH ARRAYS -->
-        <div id="usingloopswitharrayspopup" style="display: none">
-            <p>(1) The fourth item printed is 23. The <i>enhanced for loop</i> cycles through each element in sequence, stopping at the last one.</p>
-            <p>(2) <i>Fizz</i> is printed 6 times. The <i>regular for loop</i> cycles through each item based on the value of the sentry or loop variable, index. All of the odd numbers in the array are printed, like nums[0] is 13, 13 % 2 is 1. Same for the
-                elements with values 1,23,99,11,77.
+        <!-- END Popover for IF ... IF Vs IF .. ELSE IF -->
+        <!-- Popover for ORDER OF EVALUATIONS -->
+        <div id="orderofevalspopup" style="display: none">
+            <p>(1) D is printed, but C should be printed instead. Variable, <i>points</i> has a value of 67,
+                <i>points &gt; 80</i> is false, so is <i>points &gt; 90</i>, but <i>points &gt; 50</i> is true, so D is printed.</p>
+            <p>(2) The code can be reorganized to ensure the correct order of evaluations, thus <br>
+                <p>
+                    if (points &gt;= 90) {<br> &nbsp;&nbsp;System.out.println("A");
+                    <br> }
+                    <br> else if (points &gt;= 80) {<br> &nbsp;&nbsp;System.out.println("B");
+                    <br> }
+                    <br> else if (points &gt;= 60) {<br> &nbsp;&nbsp;System.out.println("C");
+                    <br> }
+                    <br> else {<br> &nbsp;&nbsp; System.out.println("C");<br> }
+                </p>
             </p>
-            <p>(3) 4 elements are printed. The <i>while loop</i> variable starts at 2, and each time through the loop it gets incremented by 1, stopping at <i>nums.length - 1</i>, which is 5. The element at index 2 is 1, the elment at index 3 is 23, then
-                99, and finally the element at index 5 is 11.</p>
+
         </div>
-        <!-- END Popover for USING LOOPS WITH ARRAYS -->
-        <!-- Popover for OUT OF BOUNDS ERROR -->
-        <div id="arrayoutofboundserrorpopup" style="display: none">
-            <p>This causes an <i>array index out of bounds error</i>. The valid index values for an array are from 0, first element, to the last element, index value of the number of elements in the array, less 1. Here, the number of elements in the array
-                is 3, so the highest viable index is 2. </p>
+        <!-- END Popover for ORDER OF EVALUATIONS -->
+        <!-- Popover for NESTED IF -->
+        <div id="nestedifpopup" style="display: none">
+            <p><i>counter</i> has a value of 17, which is greater than 15, so control flows into the first branch of the if, the <i>inner if</i>. <i>counter % 3</i> is 2, so <i>counter & 3 == 0</i> is false. Therefore the else branch is executed, and 2 is
+                added to counter, giving a final value of 19.
+            </p>
         </div>
-        <!-- END Popover for OUT OF BOUNDS ERROR -->
+        <!-- END Popover for NESTED IF -->
         <!-- END Popover for USING LOOPS WITH ARRAYS -->
         <!-- Popover for ARRAYS OF OBJECTS  -->
         <div id="arraysofobjectspopup" style="display: none">
@@ -580,30 +631,30 @@
         </script>
         <script>
             $(document).ready(function() {
-                $('#dynamicchangingarray').popover({
+                $('#usingififversusifelsecaller').popover({
                     html: true,
                     content: function() {
-                        return $('#dynamicchangingarraypopup').html();
+                        return $('#usingififversusifelsepopup').html();
                     }
                 });
             });
         </script>
         <script>
             $(document).ready(function() {
-                $('#usingloopswitharrays').popover({
+                $('#orderofevalscaller').popover({
                     html: true,
                     content: function() {
-                        return $('#usingloopswitharrayspopup').html();
+                        return $('#orderofevalspopup').html();
                     }
                 });
             });
         </script>
         <script>
             $(document).ready(function() {
-                $('#arrayoutofboundserror').popover({
+                $('#nestedifcaller').popover({
                     html: true,
                     content: function() {
-                        return $('#arrayoutofboundserrorpopup').html();
+                        return $('#nestedifpopup').html();
                     }
                 });
             });
