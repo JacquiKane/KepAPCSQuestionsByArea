@@ -156,7 +156,8 @@
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#swappingarrayelements" aria-expanded="Link to class header">
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" 
+                        data-target="#booleanlogic" aria-expanded="Link to class header">
                             Boolean Logic >>
                         </button>
                     </div>
@@ -165,7 +166,9 @@
 
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#searchingarrays" aria-expanded="Link to class header">
+                        <button class=" btn btn-primary mb-3 
+                        buttonsize" data-toggle="collapse" 
+                        data-target="#demorgan" aria-expanded="Link to class header">
                             De Morgan's Law >>
                         </button>
                     </div>
@@ -174,7 +177,8 @@
 
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#usingnestedloopswitharrays" aria-expanded="Link to class header">
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" 
+                        data-target="#loopswithconditionals" aria-expanded="Link to class header">
                             Using Loops with Conditionals >>
                         </button>
                     </div>
@@ -336,7 +340,7 @@
                             What is the final value of variable, counter?<br>
                         </p>
                         <p>
-                            if (counter > 15 ) {<br> &nbsp;&nbsp;if (counter % 3 == 0) {<br> &nbsp;&nbsp;&nbsp;&nbsp;counter -= 4;<br> &nbsp;&nbsp; }<br> else {<br> &nbsp;&nbsp;&nbsp;&nbsp; counter += 2;<br> &nbsp;&nbsp;}
+                            if (counter &gt; 15 ) {<br> &nbsp;&nbsp;if (counter % 3 == 0) {<br> &nbsp;&nbsp;&nbsp;&nbsp;counter -= 4;<br> &nbsp;&nbsp; }<br> else {<br> &nbsp;&nbsp;&nbsp;&nbsp; counter += 2;<br> &nbsp;&nbsp;}
                             <br> }
                             <br> else {<br> &nbsp;&nbsp;counter = 0;<br> }
                             <br>
@@ -346,137 +350,98 @@
                 </div>
 
 
-                <!-- Arrays of objects -->
-                <div id="arraysofobjects" class="collapse mb-3">
+                <!-- Boolean Logic -->
+                <div id="booleanlogic" class="collapse mb-3">
                     <br>
                     <div class="questiondiv">
-                        <h4 class="boldface">Arrays Of Objects</h4>
+                        <h4 class="boldface">Boolean Logic</h4>
                         <p class="questionmarker">
-                            Class SoccerPlayer has attribute <i>name</i>, with setter <i>setName(String name)</i> and getter, <i>getName()</i>?<br> The array is instantiated or newed up,<br> SoccerPlayer[] team = new SoccerPlayer[11];<br> so array, team,
-                            stores 11 instances of class SoccerPlayer.</p>
-                        <p class="questionmarker">(1) What is the impact of <br>
-                            <p>team[0] = new SoccerPlayer();<br>team[0].setName("Harry Kane");<br> team[team.length-1].setName("Troy Parrott");</p>
-                        </p>
-                        <p class="questionmarker">
-                            (2) Assuming that the array has been populated with SoccerPlayer instances, and all the attributes have been initialized what is the result of,
-                        </p>
-                        <p>for (SoccerPlayer player: team)<br> &nbsp;&nbsp;&nbsp;System.out.println(player.getName());
-                        </p>
-                        <button type="button" class="btn btn-info" id="arraysofobjectscaller" data-toggle="popover" data-placement="bottom" title="Arrays, Objects" html="true">Analysis</button>
-                    </div>
-                </div>
-
-                <!-- Swapping array elements -->
-                <div id="swappingarrayelements" class="collapse mb-3">
-                    <br>
-                    <div class="questiondiv">
-                        <h4 class="boldface">Swapping Array Elements</h4>
-                        <p class="questionmarker">
-                            Class SoccerPlayer has attribute <i>name</i>, with setter <i>setName(String name)</i> and getter, <i>getName()</i>?<br> The array is instantiated or newed up,<br> SoccerPlayer[] team = new SoccerPlayer[11];<br> so array, team,
-                            stores 11 instances of class SoccerPlayer. index1 and index2 are between 0 and 11.</p>
-                        <p class="questionmarker">(1) What is the impact of <br>
-                            <p>SoccerPlayer temp = team[index2];<br> team[index2] = team[index1];<br> team[index1] = temp;<br>
+                            Here is the status of Boolean variables used in a school application:<br>
+                            <ul>
+                                <li><i>isPresent</i> has a value of false</li>
+                                <li><i>hasHighTemp</i> has a value of true</li>
+                                <li><i>isParentContacted</i> has a value of true</li>
+<li><i>isParentAvailable</i> has a value of false</li>
+                            </ul>
+                            <p class="questionmarker">
+                                What is the school administrator going to see when the application runs?
                             </p>
-
-                            <button type="button" class="btn btn-info" id="swappingarrayelementscaller" data-toggle="popover" data-placement="bottom" title="Arrays, Swapping Elements" html="true">Analysis</button>
+                        
+                        
+                       <p>if ((isPresent && hasHighTemp) && (isParentContacted || isParentAvailable))<br>
+                    &nbsp;&nbsp;System.out.println("Send To Office");<br>
+                    else<br>
+                    &nbsp;&nbsp;System.out.println("Wait For Confirmation");
+                </p>
+                        <button type="button" class="btn btn-info" id="booleanlogiccaller" data-toggle="popover" data-placement="bottom" title="Arrays, Objects" html="true">Analysis</button>
                     </div>
                 </div>
 
-
-                <!-- SEARCHING ARRAYS -->
-                <div id="searchingarrays" class="collapse mb-3">
+                <!-- De Morgan -->
+                <div id="demorgan" class="collapse mb-3">
                     <br>
                     <div class="questiondiv">
-                        <h4 class="boldface">Searching Arrays</h4>
-                        <p>
-                            An array contains employee numbers for a small company, all odd numbers and added in order of hire date by method
-                            <i>populateEmployeeNumbers</i>. Method <i>taxProcess03</i> works with company tax return software.</p>
-                        <p>int[] employeeNumbers = new int[10];<br> populateEmployeeNumbers(employeeNumbers);
-                            <br> public static int taxProcess03(int val, int[] arr) {<br> &nbsp;&nbsp;for(int index = 0; index &lt; arr.length; index++) {<br> &nbsp;&nbsp;&nbsp;&nbsp;if (arr[index] == val) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
-                            index;
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp;}
-
-                            <br> return -1;<br> &nbsp;&nbsp;&nbsp;&nbsp;}
+                        <h4 class="boldface">De Morgan's Law</h4>
+                        <p class="questionmarker">
+                           (1) Variables a and b are booleans. Simplify,<br>
                         </p>
-
-                        <p class="questionmarker">(1) What is the impact of running method, <i>taxProcess03</i>, below?<br> taxProcess03(244, employeeNumbers);
-                        </p>
-                        <p>An array of Employee class instances is sorted according to employee number, in array employees. Class employee includes attribute,
-                            <i>number</i>, with getter, <i>getNumber</i>. An employee instance with employee number 1553 is included in the array.
-
-                        </p>
-                        int target = 1553;
-                        <p class="questionmarker">(2) What is the impact of running the code,</p>
-                        <p>int low = 0;<br> int high = employees.length-1;<br> int middle = (low+high)/2;<br> while (employees[middle].getNumber() != target && low &lt;= high) {<br> &nbsp;&nbsp;if (target &lt; employees[middle].getNumber())<br> &nbsp;&nbsp;&nbsp;&nbsp;
-                            high = middle - 1;<br> &nbsp;&nbsp;else {<br> &nbsp;&nbsp;&nbsp;&nbsp; low = middle + 1;<br> &nbsp;&nbsp;&nbsp;&nbsp; middle = (low + high) / 2;<br> &nbsp;&nbsp; } <br> &nbsp;&nbsp;if (employees[middle].getNumber() == target)<br>                            &nbsp;&nbsp;&nbsp;&nbsp; return middle;<br> &nbsp;&nbsp;else
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp; return -1;<br> &nbsp;&nbsp; }<br>
-                        </p>
-                        <p class="questionmaker"></p>
-                        <button type="button" class="btn btn-info" id="searchingarrayscaller" data-toggle="popover" data-placement="bottom" title="Searching Arrays" html="true">Analysis</button>
-                    </div>
-                </div>
-                <!-- NESTED LOOP WITH ARRAYS -->
-                <div id="usingnestedloopswitharrays" class="collapse mb-3">
-                    <br>
-                    <div class="questiondiv">
-                        <h4 class="boldface">Nested Loops & Arrays</h4>
-                        <p>
-                            An array of numbers is initialized,<br> int[] numbers = {2,2,8,20,13,15};</p>
-                        <p></p>The code below is called, and array, <i>mystery</i> is established.
-                        <p>int index, pos; <br> double total;<br> double[] mystery = new double[numbers.length]; <br> for (index = 0; index &lt; numbers.length; index++) {<br> &nbsp;&nbsp;total = 0; <br> &nbsp;&nbsp;for (pos = 0; pos &lt;= index; pos++)
-                            { <br> &nbsp;&nbsp;&nbsp;&nbsp; total += numbers[pos]; <br> &nbsp;&nbsp; } <br> &nbsp;&nbsp; mystery[index] = total/(index+1); <br> &nbsp;}
-
-                        </p>
-
-                        <p class="questionmarker">(1) What are the values of the first 3 elements of array, mystery?
-
-                        </p>
-
-                        <button type="button" class="btn btn-info" id="nestedloopswitharrayscaller" data-toggle="popover" data-placement="bottom" title="Using Nested Loops & Arrays" html="true">Analysis</button>
-                    </div>
-                </div>
-                <!-- SORTING ARRAYS -->
-                <div id="sortingarrays" class="collapse mb-3">
-                    <br>
-                    <div class="questiondiv">
-                        <h4 class="boldface">Sorting Arrays</h4>
-                        <p>
-                            An array of instances of class, Employee, has been established with Employee instances, by method <i>populateEmployees</i>,<br>
-                            <p>int[] employees = new int[10];<br> populateEmployees(employees);<br> The array is manipulated based on employee number. Employee has attribute number, and accessor, getNumber. Method <i>format</i> manipulates the array based
-                                on attribute
-                                <I>number</I>
+                        <p class="questionmarker">
+                            !((a || b) && (a && !b))
                             </p>
-
-                            <br> public static int format(Employee[] arr) {<br> &nbsp;&nbsp; for(int index = 0; index &lt; arr.length; index++) {
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp;int pos = index - 1;<br> &nbsp;&nbsp;&nbsp;&nbsp; while (pos >= 0 && arr[pos].getNumber() > arr[index].getNumber()) { <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arr[pos + 1] = arr[pos];
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pos = pos - 1; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; arr[pos + 1] = arr[index]; <br> &nbsp;&nbsp;&nbsp;&nbsp;} <br> &nbsp;&nbsp;&nbsp;&nbsp;}
-                            <br>
-                        </p>
-
-                        <p class="questionmarker">(1) What is the impact of running method, <i>format</i>, below?<br> format(employees);
-                        </p>
-                        <p>Given that array, employees, stores employees with the instances sequenced in the following order for employee number: 1304, 1337, 1203, 4501, 1105
-
-
-                        </p>
-                        <p class="questionmarker">(2) What order are these numbers listed, the third time through the loop below?</p>
-
-                        <p>
-                            for (int i = 0; i &lt; employees.length; i++) { <br> &nbsp;&nbsp;int min_idx = i; <br> &nbsp;&nbsp; for (int j = i+1; j &lt; employees.length; j++) <br> &nbsp;&nbsp;&nbsp;&nbsp; if (employees[j].getNumber() &lt; employees[min_idx].getNumber())
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min_idx = j; <br>
-                            <br> &nbsp;&nbsp;&nbsp;&nbsp;int temp = employees[min_idx]; <br> &nbsp;&nbsp;&nbsp;&nbsp;employees[min_idx] = employees[i]; <br> &nbsp;&nbsp;&nbsp;&nbsp;employees[i] = temp; <br> }
-                            <br>
-
-                        </p>
-                        </p>
-                        <p class="questionmaker"></p>
-                        <button type="button" class="btn btn-info" id="sortingarrayscaller" data-toggle="popover" data-placement="bottom" title="Sorting Arrays" html="true">Analysis</button>
+<p class="questionmarker">(2) When is this expression false?</p>
+                            <button type="button" 
+                            class="btn btn-info" 
+                            id="demorganscaller" 
+                            data-toggle="popover" 
+                            data-placement="right" title="De Morgan's Law" html="true">Analysis</button>
                     </div>
                 </div>
 
 
+                <!-- Using loops with conditionals -->
+                <div id="loopswithconditionals" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Using Loops With Conditionals</h4>
+                        <p>
+                                    A SoccerPlayer class is used as the basis for an array of players,<br>
+                                    SoccerPlayer[] team = new SoccerPlayer[11];
+                                <p>   public class SoccerPlayer {<br>
+                                    &nbsp;&nbsp;...<br>
+                                    &nbsp;&nbsp;private String position;<br>
+                                    &nbsp;&nbsp;private int goalsScored;<br>
+                                    &nbsp;&nbsp;...
+                                    <br>
+                                    &nbsp;&nbsp;public String getPosition() {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;    return position;<br>
+                                        &nbsp;&nbsp;}<br>
+                                    <br>
+                                    &nbsp;&nbsp;public int getGoalsScored() {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;    return goalsScored;<br>
+                                        &nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;...<br>
+                                        &nbsp;}
+                                    </p>
+                        
+                           
+                             
+                            </p>
+                            <p>This array is populated with SoccerPlayer instances. 
+                                Code is required to access each player in the team and add to a variable,
+                                 sPlayer, if player position is set to "Striker",
+                                  and goalsScored is more than 20.</p>
+                            
+                        </p>
 
+                        <p class="questionmarker">(1) What code is appropriate?<br>
+                            (2) Assume a new attribute is added, age, with accessor getAge(). How would the condition inside the loop be modified to only add to sPlayer if the player is older than 17?
+                        </p>
+
+                        <button type="button" class="btn btn-info" id="loopswithconditionalscaller"
+                         data-toggle="popover" data-placement="bottom" title="Using Loops With Conditionals" html="true">Analysis</button>
+                    </div>
+                </div>
+                
             </div>
         </div>
         <!-- *************************   POPOVER CONTENT  ********************************-->
@@ -520,99 +485,99 @@
         <!-- END Popover for ORDER OF EVALUATIONS -->
         <!-- Popover for NESTED IF -->
         <div id="nestedifpopup" style="display: none">
-            <p><i>counter</i> has a value of 17, which is greater than 15, so control flows into the first branch of the if, the <i>inner if</i>. <i>counter % 3</i> is 2, so <i>counter & 3 == 0</i> is false. Therefore the else branch is executed, and 2 is
+            <p>Final value of counter is 19. The initial value of 
+                <i>counter</i> is 17, which is greater than 15, so 
+                control flows into the first branch of the if, the <i>inner if</i>. <i>counter % 3</i> 
+                is 2, so <i>counter % 3 == 0</i> is false. Therefore the else branch is executed, 
+                and 2 is
                 added to counter, giving a final value of 19.
             </p>
         </div>
         <!-- END Popover for NESTED IF -->
-        <!-- END Popover for USING LOOPS WITH ARRAYS -->
-        <!-- Popover for ARRAYS OF OBJECTS  -->
-        <div id="arraysofobjectspopup" style="display: none">
-            <p>(1) The first element is newed up and appropriately accessed, to set the attribute, <i>name</i>, to "Harry Kane"<i>
-               </i>.The valid index values for an array are from 0, first element, to the last element, index value of the number of elements in the array, less 1.
+   
+        <!-- Popover for Boolean logic  -->
+        <div id="booleanlogicpopup" style="display: none">
+            <p>Wait For Confirmation. This equaltion is represented as <br>
+                ((false && true) && (true || false)), <br>
+                which is simplified to 
+                <br>false && true, which is false. Control flows to the else 
+                branch and <i>Wait For Confirmation</i> is printed.
             </p>
-            <p>An attempt is made to set the last element's name to "Troy Parrott", but this results in an
-                <i>access violation</i> as that index position in the array does not have an instance of class SoccerPlayer. When an array of objects is newed up, the elements all default to the null reference, null.</p>
-            <p>(2) All the player names are printed. We are told that the array has been populated with valid instances, and that the attributes have been set.</p>
+           
         </div>
-        <!-- END Popover for ARRAYS OF OBJECTS -->
-        <!-- Popover for SWAPPING ARRAY ELEMENTS  -->
-        <div id="swappingarrayelementspopup" style="display: none">
-            <p>The element at index1 is swapped with the element at index2. Variable, temp, stores the value at team[index2]. team[index2] is set to the value at team[index1]. Finally, team[index1] is set to temp, which stores the old value of team[index2].
+        <!-- END Popover for Boolean Logic -->
+        <!-- Popover for De Morgan  -->
+        <div id="demorganspopup" style="display: none">
+            <p>(1) (!a && !b) || (!a || b))<br>
+                Apply De Morgan's Law to the expression,<br>
+                !((a || b) && (a && !b)) &rarr; !(a || b) || !(a && !b)<br>
+                Apply De Morgan's Law to the individual parts,<br>
+                !(a || b) || !(a && !b) &rarr; (!a && !b) || (!a || b)<br>
             </p>
-
-
-        </div>
-        <!-- END Popover for SWAPPING ARRAY ELEMENTS -->
-        <!-- Popover for SEARCHING ARRAYS  -->
-        <div id="searchingarrayspopup" style="display: none">
-            <p>(1) -1 is returned. Method <i>taxProcess03</i> uses a linear search process. There are no even employee numbers so -1 is returned.
-            </p>
-            <p>(2) The index that corresponds to the employee with employee number 1553 is returned. This code represents a binary search. We are told that the array is sorted, if it is not already sorted, then binary search is not viable.</p>
-
-
-        </div>
-        <!-- END Popover for SEARCHING ARRAYS -->
-
-        <!-- Popover for using NESTED LOOPS WITH ARRAYS-->
-        <div id="nestedloopswitharrayspopup" style="display: none">
-            <p>(1) 2.0, 2.0, 4.0<br> For each iteration of the outer loop through {2,2,8,20,13,15}, each value of pos from 0 to index is used to access the element of the array, numbers.These values are added and assigned to the array, mystery, at index.
-                <p>
-                    <table>
-                        <tr>
-
-                            <th>index </th>
-                            <th></th>
-                            <th>mystery</th>
-                        </tr>
-                        <tr>
-
-                            <td>0 </td>
-                            <td>mystery[0] &larr; numbers[0]/1</td>
-                            <td>[2.0, 0.0, 0.0, 0.0, 0.0, 0.0]</td>
-                        </tr>
-                        <tr>
-
-                            <td> 1 </td>
-                            <td>mystery[1] &larr; (numbers[0] + numbers[1])/2</td>
-                            <td>[2.0, 2.0, 0.0, 0.0, 0.0, 0.0]</td>
-                        </tr>
-                        <tr>
-
-                            <td> 2 </td>
-                            <td>mystery[2] &larr; (numbers[0] + numbers[1] + numbers[2])/3</td>
-                            <td>[2.0, 2.0, 4.0, 0.0, 0.0, 0.0]</td>
-                        </tr>
-                    </table>
-                </p>
-
-        </div>
-        <!-- End popover for using nested loops with arrays -->
-        <!-- Popover for SORTING ARRAYS  -->
-        <div id="sortingarrayspopup" style="display: none">
-            <p>(1) The array is sorted in ascending order. Method <i>format</i> implements an insert sort algorithm, using the array passed in, <i>arr</i>. The code assumes a sorted part of the list, and that the first element is in this sorted part. Each
-                subsequent item is examined and inserted into the correct position in the sorted part of the list.
-            </p>
-            <p>(2) 1105, 1203, 1304, 4501, 1337</p>
-            <p>The sort algorithm shown in (2) is selection sort in ascending order, in which the array is processed sequentially, with the smallest item in the rest of the list swapped with the current item, if smaller.</p>
             <p>
-                <table>
-                    <tr>
-                        <td>1st iteration</td>
-                        <td>1105, 1337, 1203, 4501, 1304 </td>
-                    </tr>
-                    <tr>
-                        <td>2nd iteration</td>
-                        <td>1105, 1203, 1337, 4501, 1304 </td>
-                    </tr>
-                    <tr>
-                        <td>3rd iteration</td>
-                        <td>1105, 1203, 1304, 4501, 1337 </td>
-                    </tr>
-                </table>
+               (2) A truth table for this may reveal a further simplification
+               <table>
+                   <tr>
+                   <th>a</th>
+                   <th>b</th>
+                   <th>!a && b</th>
+                   <th>!a || b</th>
+                </tr>
+                <tr>
+                    <td>false</td>
+                    <td>false</td>
+                    <td>true</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>false</td>
+                    <td>true</td>
+                    <td>false</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>true</td>
+                    <td>false</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>true</td>
+                    <td>true</td>
+                    <td>false</td>
+                    <td>true</td>
+                </tr>
+               </table>
             </p>
+            <p>(2) This is false when b is false and a is true. 
+                It is true when both a and b are false, or when a and b are true, 
+                also when only b is true.</p>
+
 
         </div>
+        <!-- END Popover for De Morgan -->
+        <!-- Popover for Loops With Conditionals  -->
+        <div id="loopswithconditionalspopup" style="display: none">
+            <p>(1) It's appropriate to traverse the array, with a conditional inside the loop.<br>
+                for (int index = 0; index &lt; team.length; index++) {<br>
+                    &nbsp;&nbsp;if ((team[index].getPosition().equals("Striker")) && <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp;(team[index].getGoalsScored() &gt; 20)) {<br>
+                        &nbsp;&nbsp;    sPlayer++;<br>
+                        &nbsp;&nbsp;}
+            </p>
+            <p></p>
+            <p>(2) The condition would change to include the new requirement,<br>
+                if ((team[index].getPosition().equals("Striker")) && <br>
+                    &nbsp;&nbsp; &nbsp;&nbsp;(team[index].getGoalsScored() &gt; 20) &&
+                    &nbsp;&nbsp; &nbsp;&nbsp;(team[index].getAge() &gt; 17)) {<br>
+                    ...<br>
+                    }</p>
+
+
+        </div>
+        <!-- END Popover for Loops With Conditionals -->
+
+ 
         <!-- END Popover for SORTING ARRAYS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
@@ -661,30 +626,30 @@
         </script>
         <script>
             $(document).ready(function() {
-                $('#arraysofobjectscaller').popover({
+                $('#booleanlogiccaller').popover({
                     html: true,
                     content: function() {
-                        return $('#arraysofobjectspopup').html();
+                        return $('#booleanlogicpopup').html();
                     }
                 });
             });
         </script>
         <script>
             $(document).ready(function() {
-                $('#swappingarrayelementscaller').popover({
+                $('#demorganscaller').popover({
                     html: true,
                     content: function() {
-                        return $('#swappingarrayelementspopup').html();
+                        return $('#demorganspopup').html();
                     }
                 });
             });
         </script>
         <script>
             $(document).ready(function() {
-                $('#searchingarrayscaller').popover({
+                $('#loopswithconditionalscaller').popover({
                     html: true,
                     content: function() {
-                        return $('#searchingarrayspopup').html();
+                        return $('#loopswithconditionalspopup').html();
                     }
                 });
             });
