@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="algavg.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Loops</title>
+    <style>
+        .boldface {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+        
+        .boldfaceinfo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: large;
+        }
+        
+        .boldfaceemphasis {
+            font-size: x-large;
+        }
+        
+        .imgAni {
+            border: 5px dashed goldenrod;
+            padding: 5px;
+            width: 500px;
+            height: 200px;
+        }
+        
+        .buttonsize {
+            width: 100%;
+        }
+        
+        body {
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .questiondiv {
+            border: 5px solid blue;
+            width: 100%;
+            background-color: aliceblue;
+            padding: 1%;
+        }
+        
+        .questioncolumn {
+            border: 3px solid white;
+        }
+        
+        .questionanswer {
+            font-style: italic;
+            color: darkblue;
+        }
+        
+        .questionmarker {
+            color: darkblue;
+        }
+        
+        .popover {
+            max-width: 40%;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        table td {
+            border: 2px solid darkblue;
+            text-align: left;
+            padding-left: 3px;
+        }
+        
+        table tr:first-child td {
+            border-top: 0;
+        }
+        
+        table tr td:first-child {
+            border-left: 0;
+        }
+        
+        table tr:last-child td {
+            border-bottom: 0;
+        }
+        
+        table tr td:last-child {
+            border-right: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12 boldfont">
+                <h1 class="boldface">
+                    Solving <span class="boldfaceemphasis">Code With Loops
+                    </span> Key Problems
+                </h1>
+                <p>Use the links to expand questions and see the solutions.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#numberofiterations" data-placement="top" aria-expanded="Link to class header">
+                            Number Of Iterations >>
+                        </button>
+                    </div>
+                </section>
+
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 
+                        buttonsize" data-toggle="collapse" data-target="#infiniteloops" aria-expanded="Link to class header">
+                            Infinite Loops >>
+                        </button>
+                    </div>
+
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#nestedloops" aria-expanded="Link to class header">
+                            Nested Loops >>
+                        </button>
+                    </div>
+
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#conditionalswithloops" aria-expanded="Nested if">
+                            Using Conditionals With Loops >>
+                        </button>
+                    </div>
+
+                </section>
+
+
+
+
+
+
+            </div>
+            <!-- Number of iterations -->
+            <div class="col-md-8  questioncolumn">
+
+                <div id="numberofiterations" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Number Of Iterations</h4>
+                        <p class="questionmarker">
+                            (1) How many times is <i>Fizz</i> printed?
+                        </p>
+                        <p>
+                            int index = 5;<br> while (index &lt; 15) {<br> &nbsp;&nbsp;System.out.println("Fizz");
+                            <br> &nbsp;&nbsp;index += 2;
+                            <br>&nbsp;&nbsp; }
+                            <br>
+                        </p>
+                        <p class="questionmarker">
+                            (2) How many times is <i>Buzz</i> printed?
+                        </p>
+                        <p>
+
+                            for (int index = 0; index &lt;= 5; index+= 2) {<br> &nbsp;&nbsp;System.out.println("Buzz");
+                            <br>&nbsp;&nbsp; }
+                            <br>
+
+                        </p>
+                        <p class="questionmarker">
+                            (3) Array, team, has eleven instances of SoccerPlayer class. How many times is <i>Pop</i> printed?
+                        </p>
+                        <p>
+                            for (SoccerPlayer player : team){<br> &nbsp;&nbsp; System.out.println("Pop");
+                            <br>&nbsp;&nbsp; }
+
+                        </p>
+                        <button type="button" class="btn btn-info" id="numberofiterationscaller" data-toggle="popover" data-placement="top" title="Number Of Iterations" html="true">Analysis</button>
+                    </div>
+                </div>
+
+                <!-- Infinite loops -->
+                <div id="infiniteloops" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Infinite Loops</h4>
+                        <p class="questionmarker"> (1) What is the final value of variable, count? <br>
+                        </p>
+
+                        <p>
+
+                            <table>
+                                <tr>
+                                    <td>(a) <br>int index = 4, count = 0;<br> while (index != 17) {<br> &nbsp;&nbsp;index += 3;<br> &nbsp;&nbsp;count += 3;<br> &nbsp;}
+                                    </td>
+                                    <td style="padding-left: 5px;">
+                                        (b) <br>for (int index = 0; index &lt 10; index++) {<br> &nbsp;&nbsp;count -= 5;<br> &nbsp;&nbsp;index--;
+                                        <br> &nbsp;}
+                                    </td>
+                                </tr>
+                            </table>
+                        </p>
+
+                        <button type="button" class="btn btn-info" id="infiniteloopscaller" data-toggle="popover" data-placement="top" title="Infinite Loops" html="true">Analysis</button>
+                    </div>
+                </div>
+
+                <div id="nestedloops" class="collapse mb-3 questiondiv">
+                    <br>
+                    <h4 class="boldface">Nested Loops</h4>
+                    <p class="questionmarker">(1) What are the smallest and largest values printed?
+                    </p>
+                    <p>
+                        for (int firstFactor = 1; firstFactor &lt; 13; firstFactor++) { <br> &nbsp;&nbsp;for (secondFactor = 1; secondFactor &lt;= 12; secondFactor++) {<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(firstFactor*secondFactor); <br> &nbsp;&nbsp;&nbsp;&nbsp;}
+                        <br> &nbsp;&nbsp; }
+                    </p>
+                    <p class="questionmarker">(2) The while loop should be equivalent to the for loop above. What's missing?
+                    </p>
+                    <p>
+                        int firstFactor = 1, secondFactor = 1;<br> while (firstFactor &lt; 13) {<br> &nbsp;&nbsp;System.out.println(firstFactor + " x " + secondFactor + " = " + firstFactor*secondFactor); { <br> &nbsp;&nbsp;while (secondFactor &lt;= 12)
+                        {
+                        <br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(firstFactor*secondFactor); <br>&nbsp;&nbsp;&nbsp;&nbsp;}
+
+                        <br> &nbsp; }
+                    </p>
+                    <button type="button" class="btn btn-info" id="nestedloopscaller" data-toggle="popover" data-placement="top" title="Nested Loops" html="true">Analysis</button>
+                </div>
+
+                <!-- Using conditionals with loops -->
+                <div id="conditionalswithloops" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Nested If</h4>
+                        <p class="questionmarker">
+                            How many times are <i>Fizz, Buzz, and Pop</i> printed?<br>
+                        </p>
+                        <p>
+                            for (int index = 0; index &lt; 11; index++) {<br> &nbsp;&nbsp; if (index % 2 == 0) {<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Fizz");
+                            <br> &nbsp;&nbsp;}
+                            <br> else if (index % 3 == 0) {<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Buzz");
+                            <br> &nbsp;&nbsp;}
+                            <br> else {<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Pop");<br> &nbsp;&nbsp;}
+                            <br>
+                        </p>
+                        <button type="button" class="btn btn-info" id="conditionalswithloopscaller" data-toggle="popover" data-placement="bottom" title="Conditionals With Loops" html="true">Analysis</button>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <!-- *************************   POPOVER CONTENT  ********************************-->
+        <!-- Popover for NUMBER OF ITERATIONS -->
+        <div id="numberofiterationspopup" style="display: none">
+            <p>(1) <i>Fizz</i> is printed 5 times. Fizz is printed when index has a value of 5,7,9,11,13. Each time through the loop the sentry variable is increased by 2. After the fifth time through the loop body, index has a value of 15. Since <i>15 &gt; 15</i>                is false, the loop executes 5 times only.</p>
+            <p>(2) <i>Buzz</i> is printed three times, when index has a value of 0, 2, 4. After the third time through the loop, index has a value of 6, so the loop condition is no longer true and the loop finishes executing.
+
+                <i>Buzz</i> is printed.</p>
+            <p>(3) <i>Pop</i> is printed 11 times. The loop iterates for each element of the array, which has 11 elements.</p>
+        </div>
+        <!-- END Popover for NUMBER OF ITERATIONS -->
+        <!-- Popover for INFINITE LOOPS -->
+        <div id="infiniteloopspopup" style="display: none">
+            <div>
+                <p>
+                    Impossible to determine, as the loops are infinte loops. </p>
+                <p>In (a), <i>index</i> has a starting value of 4, each time through the loop, 3 is added. The loop executes for index values of 4,7,10,13,16,19... The addition of 3 never reaches a value of 17, the loop condition is always true, so the loop
+                    is infinite.
+                </p>
+                <p>In (b), index is incremented by 1, in the for loop statement, but is then decremented in the body of the loop. index remains at a value of 0, and the loop condition is always true.</p>
+            </div>
+        </div>
+        <!-- END Popover for INFINITE LOOPS -->
+        <!-- Popover for NESTED LOOPS -->
+        <div id="nestedloopspopup" style="display: none">
+            <p>(1) 1, and 144. The printed value is the product of first and secondfactors. The smallest value happens when firstFactor and secondFactor are at the lowest values, which is 1. The largest value of firstFactor is 12, and the largest value of
+                secondfactor is 12. Therefore the largest value printed is 144</p>
+            <p>(2) secondFactor should be reset to 1 right before the inner loop. Otherwise, the print will only be seen the first iteration of the outer loop.
+            </p>
+            <p>
+                int firstFactor = 1, secondFactor = 1;<br> while (firstFactor &lt; 13) {<br> &nbsp;&nbsp;
+                <span style="color:red;">secondFactor = 1;</span> <br> &nbsp;&nbsp;while (secondFactor &lt;= 12) {
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(firstFactor*secondFactor); <br> &nbsp;&nbsp;&nbsp;&nbsp;secondFactor++; <br> &nbsp;&nbsp;&nbsp;&nbsp;} <br>&nbsp;&nbsp;&nbsp;&nbsp;firstFactor++;
+                <br> &nbsp; }
+            </p>
+
+        </div>
+        <!-- END Popover for NESTED LOOPS -->
+        <!-- Popover for CONDITIONALS WITH LOOPS -->
+        <div id="conditionalswithloopspopup" style="display: none">
+            <p><i>Pop</i> is printed 3 times. <i>Fizz</i> is printed 6 times. <i>Buzz</i> is printed 2 times.
+                <table>
+                    <tr>
+                        <th>index</th>
+                        <th>index % 2</th>
+                        <th>index % 3</th>
+                        <th>output</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>Fizz</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>Pop</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>Fizz</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>Buzz</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>Fizz</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>Pop</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>Fizz</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>Pop</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>Fizz</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>Buzz</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>Fizz</td>
+                    </tr>
+                </table>
+            </p>
+        </div>
+        <!-- END Popover for CONDITIONALS WITH LOOPS -->
+
+
+
+
+        <!-- END Popover for SORTING ARRAYS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+        <!-- Pop overs -->
+        <script>
+            $(document).ready(function() {
+                $('#numberofiterationscaller').popover({
+                    html: true,
+                    content: function() {
+                        return $('#numberofiterationspopup').html();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#infiniteloopscaller').popover({
+                    html: true,
+                    content: function() {
+                        return $('#infiniteloopspopup').html();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#nestedloopscaller').popover({
+                    html: true,
+                    content: function() {
+                        return $('#nestedloopspopup').html();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#conditionalswithloopscaller').popover({
+                    html: true,
+                    content: function() {
+                        return $('#conditionalswithloopspopup').html();
+                    }
+                });
+            });
+        </script>
+
+
+</body>
+
+</html>
