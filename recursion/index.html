@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="algavg.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Recursion</title>
+    <style>
+        .boldface {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+        
+        .boldfaceinfo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: large;
+        }
+        
+        .boldfaceemphasis {
+            font-size: x-large;
+        }
+        
+        .imgAni {
+            border: 5px dashed goldenrod;
+            padding: 5px;
+            width: 500px;
+            height: 200px;
+        }
+        
+        .buttonsize {
+            width: 100%;
+        }
+        
+        body {
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .questiondiv {
+            border: 5px solid blue;
+            width: 100%;
+            background-color: aliceblue;
+            padding: 1%;
+        }
+        
+        .questioncolumn {
+            border: 3px solid white;
+        }
+        
+        .questionanswer {
+            font-style: italic;
+            color: darkblue;
+        }
+        
+        .questionmarker {
+            color: darkblue;
+        }
+        
+        .popover {
+            max-width: 40%;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        table td {
+            border: 2px solid darkblue;
+            text-align: left;
+            padding-left: 3px;
+        }
+        
+        table tr:first-child td {
+            border-top: 0;
+        }
+        
+        table tr td:first-child {
+            border-left: 0;
+        }
+        
+        table tr:last-child td {
+            border-bottom: 0;
+        }
+        
+        table tr td:last-child {
+            border-right: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12 boldfont">
+                <h1 class="boldface">
+                    Solving <span class="boldfaceemphasis">Recursion
+                    </span> Key Problems
+                </h1>
+                <p>Use the links to expand questions and see the solutions.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" 
+                        data-toggle="collapse" data-target="#recursivesolutions" data-placement="top" aria-expanded="Link to Declaring 2D arrays">
+                            Recursive Solutions >>
+                        </button>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" 
+                        data-toggle="collapse" data-target="#basecase" data-placement="top" aria-expanded="Link to accessing 2D arrays">
+                            Base Case >>
+                        </button>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" 
+                        data-toggle="collapse" data-target="#recursivecase" aria-expanded="Link to using loops with 2D arrays">
+                            Recursive Case >>
+                        </button>
+                    </div>
+
+
+                </section>
+
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" 
+                        data-toggle="collapse" data-target="#recursivemethods" 
+                        aria-expanded="Link to calling super constructor">
+                            Writing Recursive Methods >>
+                        </button>
+                    </div>
+
+                </section>
+            </div>
+
+
+            <div class="col-md-8  questioncolumn">
+
+                <div id="recursivesolutions" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Recursive Solutions</h4>
+                        <p class="questionmarker">
+                            (1) What 2 cases must exist in a recursive solution?
+                        </p>
+                        <p class="questionmarker">
+                            (2) What does the iterative solution below do? 
+                            How can this solution be transformed into a recursive solution?
+                        </p>
+                        <p>
+                            public int morePowerToYou(int num, int power) {<br>
+                            finalVal = 1;<br>
+                            for (int times = 1; times &lt;= power; times++) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;    finalVal = finalVal * num;<br>
+                            &nbsp;&nbsp;}<br>
+                            return finalVal;<br>
+                            &nbsp;}
+                        </p>
+
+                        <button type="button" class="btn btn-info" 
+                        id="recursivesolutionspopup" data-toggle="popover" 
+                        data-placement="right" title="Recursive Solutions" html="true">Analysis</button>
+                    </div>
+                </div>
+
+                <div id="basecase" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Base Case</h4>
+                        <p> A geometric sequence is described by </p>
+                        <p>t<sub>n</sub> = a*r<sup>(n-1)</sup></p>
+                        <p> A recursive method for finding the nth term has been coded below.</p>
+                       <p>
+                           public int geoSequenceTermN(int a, int r, int n) {<br>
+                           &nbsp;&nbsp;// Base Case Missing?<br>
+                           &nbsp;&nbsp;// Recursive Case<br>
+                           &nbsp;&nbsp;return(a*geoSequenceTermN(a, r, n-1))
+                        }
+                       </p>
+                        <p class="questionmarker">
+                            (1) What's the base case?</p> 
+                        
+                        
+
+                        <button type="button" class="btn btn-info" 
+                        id="basecasepopup" data-toggle="popover" data-placement="right" 
+                        title="Recursive Solution, Base Case" html="true">Analysis</button>
+                    </div>
+                </div>
+
+                <!-- RECURSIVE CASE -->
+                <div id="recursivecase" class="collapse mb-3">
+                    <div class="questiondiv">
+                        <h4 class="boldface">Recursive Case</h4>
+                        <p> An arithmetic sequence is described by </p>
+                        <p>t<sub>n</sub> = a + d*(n-1)</p>
+                        <p> A recursive method for finding the nth term has been coded below.</p>
+                       <p>
+                           public int arithmeticSequenceTermN(int a, int d, int n) {<br>
+                           &nbsp;&nbsp;// Base Case<br>
+                           &nbsp;&nbsp;if (n == 1) { <br>
+                           &nbsp;&nbsp;&nbsp;return a;<br>
+                           &nbsp;&nbsp;}<br>
+                           &nbsp;&nbsp;// Recursive Case Missing?<br>
+                           &nbsp;&nbsp;<br>
+                        }
+                       </p>
+                        <p class="questionmarker">
+                            (1) What's the recursive case?</p> 
+
+
+                        <button type="button" class="btn btn-info" 
+                        id="recursivecasepopup" data-toggle="popover" 
+                        data-placement="top" title="Recursive Solution, Recursive Case" html="true">Analysis</button>
+                    </div>
+                </div>
+
+
+                <!-- RECURSIVE METHODS -->
+                <div id="recursivemethods" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Writing Recursive Methods</h4>
+                        <p>The Fibonacci sequence is a sequence in which 
+                            the first 2 terms are given as 0 and 1 respectively, and all 
+                        other terms are made up of the sum of the prior 2 terms.</p>
+<p>The first 7 terms are <i>0, 1, 1, 2, 3, 5, 8 ...</i></p>
+<p class="questionmarker">(1) Create a recursive solution that returns the nth term of the Fibonacci sequence.</p>
+                        <button type="button" class="btn btn-info" 
+                        id="recursivemethodspopup" data-toggle="popover" 
+                        data-placement="right" title="Writing Recursive Methods" html="true">Analysis</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- *************************   POPOVER CONTENT  ********************************-->
+
+        <!-- Recursive solutions-->
+        <div id="recursivesolutionscontent" style="display: none">
+            <div>
+                <p>(1) A recursive solution, typically applied in a method or a function, is a block of code that references itself, or calls itself. 
+                    There are 2 parts to a recursive solution:
+                    <ul>
+                        <li><i>base case</i>, in which the block of code send a return to the caller</li>
+<li><i>recursive case</i>, in which the block of code calls itself</li>
+                    </ul>
+                </p>
+                <p>
+                   (2) This code raises the int parameter, <i>num</i>, to the power of the other int parameter, 
+                   <i>power</i>. The result is then returned. Effectively, <i>num</i> is multiplied by itself 
+                   <i>power</i> times.
+                </p>
+
+                <p>
+                    A recursive solution needs a base case and a recursive case.</p>
+If the power has a value of 1, we return the num parameter, as num<sup>1</sup> is num. This is the base case.
+                <p>If the value of power is greater than 1, we can call the method recursively, reducing the
+                     value of <i>power</i> and multiplying by <i>num</i>.</p>
+                     <p>
+                         public int morePowerToYou(int num, int power) {<br>
+&nbsp;&nbsp;if (power==1) { <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return num;  <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;                     }<br>
+    &nbsp;&nbsp;                     return (num*morePowerToYou(num, power-1));<br>
+    &nbsp;&nbsp;}
+                     </p>
+
+
+            </div>
+        </div>
+        <!-- End recursive solutions popup-->
+
+
+        <!-- Popover for base case -->
+
+        <div id="basecasecontent" style="display: none">
+            <p>(1) The base case should return the first term, and the first term is term 1.
+            </p>
+            <p>
+                Using the formula, t<sub>1</sub> is a*r<sup>1-1</sup>, or a*r<sup>0</sup>.
+                 This is <i>a</i>, when n is 1.
+            </p>
+           <p>The base case?</p>
+           <p>return a;</p>
+ <p>
+                           public int geoSequenceTermN(int a, int r, int n) {<br>
+                           &nbsp;&nbsp;// Base Case Missing?<br>
+                           &nbsp;&nbsp;if (n == 1) { <br>
+                            &nbsp;&nbsp;return a;
+                            &nbsp;&nbsp;}<br>
+                           &nbsp;&nbsp;// Recursive Case<br>
+                           &nbsp;&nbsp;return(a*geoSequenceTermN(a, r, n-1))
+                        }
+                       </p>
+
+        </div>
+        <!-- END Popover for base case -->
+
+
+
+        <!-- popover for recursive case-->
+        <div id="recursivecasecontent" style="display: none">
+            <br>
+            <p>(1) The recursive case involves the method calling itself. 
+                The formula works by adding the common difference, d, to the prior term.
+                </p>
+                <p>The recursive case can be coded using n-1, as,</p>
+                <p>return (d + arithmeticSequenceTermN(a, d, n-1));</p>
+                <p>
+                    public int arithmeticSequenceTermN(int a, int d, int n) {<br>
+                    &nbsp;&nbsp;// Base Case<br>
+                    &nbsp;&nbsp;if (n == 1) { <br>
+                    &nbsp;&nbsp;&nbsp;return a;<br>
+                    &nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;// Recursive Case Missing?<br>
+                    &nbsp;&nbsp;return (d + arithmeticSequenceTermN(a, d, n-1));<br>
+                 }
+                </p>
+        </div>
+        <!-- END popover content for recursive case -->
+
+        <!-- Popover for recursive methods -->
+        <div id="recursivemethodscontent" style="display: none">
+            <p> Let's give the method a name of fibonnacciTermN</p>
+            <p>public int fibonacciTermN(int n) {..}</p>
+          <p> (a) Identify the base case</p>
+          <p>In this sequence, the base base involves more than one number or value, 
+              as the first 2 terms have to be given.</p>
+        <p>
+            if (n == 0) {<br>
+            &nbsp;&nbsp; return 0;
+        &nbsp;}<br>
+        else if (n == 1) {<br>
+            &nbsp;&nbsp; return 1;
+
+        </p>
+        <p>(b) Identify the recursive case</p>
+        <p>The recursive case involves adding 
+            the prior 2 terms, and falling back on the recursive method to do so.</p>
+        <p> return (fibonacciTermN(n-1) + fibonacciTermN(n-2));</p>
+        <p>Here is the full solution,</p>
+        <p>
+            public int fibonacciTermN(int n)  {<br>
+            &nbsp;&nbsp;    if(n == 0) {<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;       return 0;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;    else if(n == 1) {<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;      return 1;<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;   else {<br>
+            &nbsp;&nbsp; &nbsp;&nbsp;      return fibonacci(n - 1) + fibonacci(n - 2);<br>
+            &nbsp;&nbsp; }<br>
+            }<br>
+        </p>
+        </div>
+
+        <!-- END Popover for recursive methods -->
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+        <!-- Pop overs -->
+        <script>
+            $(document).ready(function() {
+                $('#recursivesolutionspopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#recursivesolutionscontent').html();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#basecasepopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#basecasecontent').html();
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $('#recursivecasepopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#recursivecasecontent').html();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#recursivemethodspopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#recursivemethodscontent').html();
+                    }
+                });
+            });
+        </script>
+    
+
+
+
+</body>
+
+</html>
