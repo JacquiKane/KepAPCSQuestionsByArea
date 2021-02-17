@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="algavg.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>OOP</title>
+    <style>
+        .boldface {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+        
+        .boldfaceinfo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: large;
+        }
+        
+        .boldfaceemphasis {
+            font-size: x-large;
+        }
+        
+        .imgAni {
+            border: 5px dashed goldenrod;
+            padding: 5px;
+            width: 500px;
+            height: 200px;
+        }
+        
+        .buttonsize {
+            width: 100%;
+        }
+        
+        body {
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .questiondiv {
+            border: 5px solid blue;
+            width: 100%;
+            background-color: aliceblue;
+            padding: 1%;
+        }
+        
+        .questioncolumn {
+            border: 3px solid white;
+        }
+        
+        .questionanswer {
+            font-style: italic;
+            color: darkblue;
+        }
+        
+        .questionmarker {
+            color: darkblue;
+        }
+        
+        .popover {
+            max-width: 40%;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        table td {
+            border: 2px solid darkblue;
+            text-align: left;
+            padding-left: 3px;
+        }
+        
+        table tr:first-child td {
+            border-top: 0;
+        }
+        
+        table tr td:first-child {
+            border-left: 0;
+        }
+        
+        table tr:last-child td {
+            border-bottom: 0;
+        }
+        
+        table tr td:last-child {
+            border-right: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12 boldfont">
+                <h1 class="boldface">
+                    Solving <span class="boldfaceemphasis">OOP
+                    </span> Key Problems
+                </h1>
+                <p>Use the links to expand questions and see the solutions.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#tenetsofoop" data-placement="top" aria-expanded="Link to Declaring 2D arrays">
+                            4 Tenets of OOP >>
+                        </button>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#accessingsuperclassattributes" data-placement="top" aria-expanded="Link to accessing 2D arrays">
+                            Accessing Superclass Attributes >>
+                        </button>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#overridingmethods" aria-expanded="Link to using loops with 2D arrays">
+                            Polymorphism, Overriding Methods >>
+                        </button>
+                    </div>
+
+
+                </section>
+
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#callingsuperconstructor" aria-expanded="Link to calling super constructor">
+                            Calling Superclass Constructor >>
+                        </button>
+                    </div>
+
+                </section>
+
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#classcastexception" aria-expanded="Link to class cast exception">
+                            Class Cast Exception >>
+                        </button>
+                    </div>
+
+                </section>
+
+
+
+            </div>
+            <div class="col-md-8  questioncolumn">
+
+                <div id="tenetsofoop" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Tenets of OOP</h4>
+                        <p class="questionmarker">
+                            (1) What are the 4 principles of OOP?
+                        </p>
+                        <p class="questionmarker">
+                            (2) Identify the tenet of OOP shown below in the code. Which class is the superclass? Which class is the subclass?
+                        </p>
+                        <p>
+                            public class ChocolateChipCookie extends PlainCookie { <br> &nbsp;&nbsp;private double gramsChocolateChips;<br> // <br> }
+                        </p>
+
+                        <button type="button" class="btn btn-info" id="tenetsofooppopup" data-toggle="popover" data-placement="right" title="2D Arrays, Declaration" html="true">Analysis</button>
+                    </div>
+                </div>
+
+                <div id="accessingsuperclassattributes" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Accessing Superclass Attributes</h4>
+                        <p class="questionmarker">
+                            (1) Given class SoccerPlayer and subclass MidFieldSoccerPlayer. What is wrong with the following code snippet?
+                        </p>
+                        <p>
+                            public class SoccerPlayer {<br> &nbsp;&nbsp; private String name;<br> &nbsp;&nbsp; &nbsp;&nbsp; private double age;<br> &nbsp;&nbsp; private String position;<br> &nbsp;&nbsp; public void setAge(double playerAge) {<br> &nbsp;&nbsp;&nbsp;&nbsp;
+                            age = playerAge;<br> &nbsp;&nbsp;&nbsp;}
+                            <br> //
+                            <br> &nbsp;&nbsp;}
+                        </p>
+                        <p>public class MidfieldSoccerPlayer extends SoccerPlayer {<br> &nbsp;&nbsp; private int depthPerception;<br> &nbsp;&nbsp; &nbsp;&nbsp;private double tackleEffectiveness;<br><br> // ...<br> &nbsp;&nbsp;public void updateMidfieldPlayerAge(double
+                            playerAge) &nbsp;&nbsp;{
+                            <br> &nbsp;&nbsp; age = playerAge;<br>&nbsp;&nbsp; &nbsp;}
+                        </p>
+
+                        <button type="button" class="btn btn-info" id="accessingsuperclassattributespopup" data-toggle="popover" data-placement="right" title="Accessing Superclass Attributes" html="true">Analysis</button>
+                    </div>
+                </div>
+
+                <!-- OVERRIDING METHODS -->
+                <div id="overridingmethods" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Overriding Methods</h4>
+                        <p class="questionmaker">Given the class and inheritance structure,<br>
+                        </p>
+                        <p>public class PlainCookie {<br> &nbsp;&nbsp; &nbsp;&nbsp; private double gramsSelfRaisingFlour;<br> &nbsp;&nbsp; &nbsp;&nbsp; private double gramsButter;<br> &nbsp;&nbsp; &nbsp;&nbsp; private double gramsSugar;<br> &nbsp;&nbsp;
+                            &nbsp;&nbsp; private double quantityEgg;<br> &nbsp;&nbsp; &nbsp;&nbsp; //<br> &nbsp;&nbsp; public void bake() {<br> &nbsp;&nbsp; System.out.println("Add mixture to non-stick cookie pan\n"<br> &nbsp;&nbsp; + "and bake at 350
+                            degrees for 10 minutes.");<br> &nbsp;&nbsp; }<br> &nbsp;&nbsp; // <br> &nbsp;&nbsp; }<br>
+                        </p>
+                        <p>
+                            public class ChocolateChipCookie extends PlainCookie {<br> &nbsp;&nbsp;private double gramsChocolateChips;<br> &nbsp;&nbsp; public void bake() {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Add mixture to non-stick
+                            cookie pan\n"<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + "and bake at 340 degrees for 10 minutes.");<br> &nbsp;&nbsp;&nbsp;&nbsp; }<br> &nbsp;&nbsp; // <br> &nbsp;&nbsp; }<br>
+                        </p>
+
+                        <p class="questionmarker">(1) What temperature is listed by the calls? You can assume default constructors. </p>
+                        <p>
+                            (a)
+                            <br>PlainCookie cookieA = new PlainCookie();<br> cookieA.bake();
+                            <br> (b) <br>PlainCookie cookieB = new ChocolateChipCookie();<br> cookieB.bake();
+                            <br>
+                        </p>
+                        <p class="questionmarker">(2) 2 different object related by inheritance, respond in different ways to the same request, <i>bake</i>. What is this an example of?</p>
+                        <button type="button" class="btn btn-info" id="overridingmethodspopup" data-toggle="popover" data-placement="top" title="Overriding Methods" html="true">Analysis</button>
+                    </div>
+                </div>
+
+
+                <!-- Calling superclass constructor -->
+                <div id="callingsuperconstructor" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+                        <h4 class="boldface">Calling Superclass Constructor</h4>
+                        <p>Given the code,</p>
+                        <p>
+                            public class PlainCookie {<br> &nbsp;&nbsp; //<br> &nbsp;&nbsp; public PlainCookie() { <br> &nbsp;&nbsp; &nbsp;&nbsp; System.out.print("PlainCookie");<br> &nbsp;&nbsp; }<br>
+                        </p>
+                        <p>public class ChocolateChipCookie extends PlainCookie {<br> &nbsp;&nbsp;private double gramsChocolateChips;<br> &nbsp;&nbsp;// &nbsp;&nbsp;public ChocolateChipCookie() { <br> &nbsp;&nbsp;&nbsp;&nbsp; System.out.print("ChocolateChipCookie");
+                            <br> &nbsp;&nbsp; }<br>
+                        </p>
+                        <p class="questionmarker">
+                            What is displayed on the console when the following code is executed?<br>
+                        </p>
+                        <p>
+                            (a) PlainCookie cookieA = new PlainCookie();<br> (b) PlainCookie cookieB = new ChocolateChipCookie(); <br> (c) ChocolateChipCookie cookieC = new ChocolatechipCookie();
+                        </p>
+                        <button type="button" class="btn btn-info" id="callingsuperconstructorpopup" data-toggle="popover" data-placement="bottom" title="Calling Super Constructor" html="true">Analysis</button>
+                    </div>
+                </div>
+
+
+                <!-- Class cast exception -->
+                <div id="classcastexception" class="collapse mb-3">
+                    <br>
+                    <div class="questiondiv">
+
+                        <h4 class="boldface">Class Cast Exception</h4>
+
+
+
+                        <div>
+                            <p>Given the class & inheritance structure, </p>
+                            <p>
+                                public class SoccerPlayer {<br> &nbsp;&nbsp; private String name;<br> &nbsp;&nbsp;private double age;<br> &nbsp;&nbsp;//
+                                <br> &nbsp;&nbsp;public String getName() {<br> &nbsp;&nbsp; return name;<br> &nbsp;} <br>
+
+
+
+                            </p>
+                            <p>
+                                public class MidfieldSoccerPlayer extends SoccerPlayer {<br> &nbsp;&nbsp; private int depthPerception;<br> &nbsp;&nbsp; //<br>
+
+                                <br> &nbsp;&nbsp; public MidfieldSoccerPlayer(int depthPerception, <br> &nbsp;&nbsp; &nbsp;&nbsp; String name, double age, String position, String club) {<br> &nbsp;&nbsp; &nbsp;&nbsp; super(name, age, position, club);<br>                                &nbsp;&nbsp; &nbsp;&nbsp; this.depthPerception = depthPerception;<br> &nbsp;&nbsp; &nbsp;&nbsp; this.tackleEffectiveness = tackleEffectiveness;<br> &nbsp;&nbsp; }<br> &nbsp;&nbsp; public int getDepthPerception() {<br> &nbsp;&nbsp;&nbsp;&nbsp;return
+                                depthPerception;
+                                <br> &nbsp;&nbsp;}
+
+                            </p>
+                            <p class="questionmarker">(1) What happens as a result of the following code? <br>
+
+                            </p>
+                            <p>SoccerPlayer midfielder = <br> new MidfieldSoccerPlayer(2, .75, "Ronan Curtis", 24, "mid-forward", "Portsmouth"); <br> String playerName = midfielder.getName();</p>
+                            <p class="questionmarker">
+                                (2) How about this code?
+                            </p>
+                            <p> int dp = midfielder.getDepthPerception();</p>
+
+                            <p class="questionmarker">
+                                (3) Is there an issue with this code?
+                            </p>
+                            <p>
+                                MidfieldSoccerPlayer player = (MidfieldSoccerPlayer)new SoccerPlayer();
+                            </p>
+                        </div>
+                        <button type="button" class="btn btn-info" id="classcastingpopup" data-toggle="popover" data-placement="bottom" title="2D Arrays, Objects" html="true">Analysis</button>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        <!-- *************************   POPOVER CONTENT  ********************************-->
+
+        <!-- tenets of OOP popup-->
+        <div id="tenetsofoopcontent" style="display: none">
+            <div>
+                <p>In (1), the 4 tenets of Object Oriented Programming are APIE - </p>
+                <p>
+                    <ul>
+                        <li>Abstraction, pulling out the big ideas and forming software templates called classes. Classes are newed up, or instantiated, to form objects.</li>
+                        <li>Polymorphism, the ability of different objects to respond in different ways to the same request (method). Overriding methods is how Java supports Polymorphism.
+                        </li>
+                        <li>Inheritance, reusing code in one class (the super class or parent class) in another class (child class or sub-class). Facilitated by the
+                            <i>extends</i> keyword in Java.
+                        </li>
+                        <li>Encapsulation, subsuming logic and data inside a class, so the user of the class does not have to worry about details that are within the class.</li>
+                    </ul>
+                </p>
+
+                <p>
+                    (2) The keyword <i>extends</i> signifies inheritance. In this case,
+                    <i>ChocolateChipCookie</i> class inherits from <i>PlainCookie</i> class. PlainCookie is the superclass or parent class, and ChocolatechipCookie is the child class or subclass.
+
+                </p>
+
+
+            </div>
+        </div>
+        <!-- End tenets of oop popups-->
+
+
+        <!-- Popover for ACCESSING SUPERCLASS ATTRIBUTES -->
+
+        <div id="accessingsuperclassattributescontent" style="display: none">
+            <p>(1) The <i>age attribute of the parent class cannot be directly accessed by the child class, because it is private. 
+                Instead, the parent class setter for the age attribute should be called.</i>
+            </p>
+            <p>
+                setAge(playerAge);
+            </p>
+            &nbsp;&nbsp;public void updateMidfieldPlayerAge(double playerAge) &nbsp;&nbsp;{
+            <br> &nbsp;&nbsp; setAge(playerAge);<br>&nbsp;&nbsp; &nbsp;}
+
+
+        </div>
+        <!-- END Popover for ACCESSING SUPERCLASS ATTRIBUTES -->
+
+
+
+        <!-- popover for OVERRIDING METHODS-->
+        <div id="overridingmethodscontent" style="display: none">
+            <p>(1) <i>cookieA.bake()</i> lists the 350<sup>o</sup> as in the bake method for class,
+                <i>PlainCookie</i>.
+            </p>
+            <p>
+                <i>cookieB.bake()</i> lists the 340<sup>o</sup> as in the bake method for <i>ChocolateChipCookie</i> class.
+            </p>
+            <p>The class of the object is resolved at runtime, so even though cookieB has been declared as an object of class PlainCookie, it receives a ChocolateChipCookie instance.</p>
+            <p>(2) The <i>bake</i> method is overriden by the subclass, <i>ChocolateChipCookie</i>, this is an example of <i>Polymorphism</i>.</p>
+        </div>
+        <!-- END popover content for OVERRIDING METHODS -->
+
+        <!-- Popover for CALLING SUPER CONSTRUCTOR -->
+        <div id="callingsuperconstructorcontent" style="display: none">
+            <p>In (a), the constructor for PlainCookie is called, so <i>PlainCookie</i> is printed.
+
+            </p>
+            <p>In (b) and (c), the constructor for ChocolateChipCookie implicitely calls the constructor for PlainCookie first. We see <i>PlainCookie</i> followed by <i>ChocolateChipCookie</i>.</p>
+        </div>
+        <!-- END Popover for CALLING SUPER CONSTRUCTOR -->
+
+        <!-- Popover for CLASS CASTING  -->
+        <div id="classcastingcontent" style="display: none ">
+            <p>(1) This code uses the SoccerPlayer class to declare an object, and subsequently news up an instance of the MidfieldSoccerPlayer class. This is viable, because the parent class can be used to declare a reference to a child class. The issue
+                is that only the parent class methods are accessible! In this case, "Ronan Curtis" is assigned to variable, <i>playerName</i>
+
+            </p>
+
+            <p>(2) This will not get past the compiler, the method is not visible. The player object was declared as an instance of class SoccerPlayer, and only has access to the methods in SoccerPlayer class, not MidfieldSoccerPlayer.</p>
+            <p>This can be resolved by using a class cast,</p>
+            <p> int dp = ((MidfieldSoccerPlayer)midfielder).getDepthPerception();</p>
+            <p>(3) A Class Cast Exception results. A cast from MidfieldSoccerPlayer to SoccerPlayer is OK, because MidfieldSoccerPlayer <i>is a</i> SoccerPlayer. However, MidfieldSoccerPlayer is a specialized SoccerPlayer, you cannot cast from SoccerPlayer
+                instance to MidfieldSoccerPlayer instance - this results in a class cast exception.</p>
+        </div>
+        <!-- END Popover for CLASSCASTING -->
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+        <!-- Pop overs -->
+        <script>
+            $(document).ready(function() {
+                $('#tenetsofooppopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#tenetsofoopcontent').html();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#accessingsuperclassattributespopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#accessingsuperclassattributescontent').html();
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $('#overridingmethodspopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#overridingmethodscontent').html();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#callingsuperconstructorpopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#callingsuperconstructorcontent').html();
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#classcastingpopup').popover({
+                    html: true,
+                    content: function() {
+                        return $('#classcastingcontent').html();
+                    }
+                });
+            });
+        </script>
+
+
+
+</body>
+
+</html>
