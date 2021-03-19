@@ -297,7 +297,8 @@
                             <p class="questionmarker">
                                 (2) Assuming that the array has been populated with SoccerPlayer instances, all the attributes have been initialized and store valid player objects, what is the result of,
                             </p>
-                            <p>for (int row = 0; row &lt; teams.length; row++) {<br> &nbsp;&nbsp;for (int col = 0; col &lt; teams[0].length; col++) { <br> &nbsp;&nbsp;&nbsp;System.out.println(teams[row][col].setName(teams[row][col].getName() + " Spurs F.C.")));<br>                                &nbsp;&nbsp;&nbsp;}
+                            <p>for (int row = 0; row &lt; teams.length; row++) {<br> &nbsp;&nbsp;for (int col = 0; col &lt; teams[0].length; col++) { <br> 
+                                &nbsp;&nbsp;&nbsp;System.out.println(teams[row][col].getName() + " Spurs F.C.")));<br>                                &nbsp;&nbsp;&nbsp;}
                                 <br> &nbsp;}
                             </p>
                         </div>
@@ -318,7 +319,9 @@
                             What is wrong with the code?
                         </p>
                         <p>
-                            int i = 0;<br> while (i &lt; employeeNumbers[0].length) {<br> &nbsp;&nbsp;if (employeeNumbers[employeeNumbers.length][i] == target)<br> }
+                            int i = 0;<br> while (i &lt; employeeNumbers[0].length) {<br> 
+                                &nbsp;&nbsp;if (employeeNumbers[employeeNumbers.length-1][i] == target) {<br>
+                                return 1;<br>} 
                             <br> return -1;<br> &nbsp;}
                         </p>
 
@@ -330,8 +333,8 @@
                         <p>for (int i = 0; i &lt; employees.length; i++) { <br> &nbsp;&nbsp;for (int j = 0; j &lt; employees[0].length; j++) {<br> &nbsp;&nbsp;&nbsp;&nbsp; if (!(employees[i][j].getPayProcessed())) {<br> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
                             employees[i][j].setPayProcessed(true);
                             <br> &nbsp;&nbsp;&nbsp; }<br>
-                            <br> &nbsp;&nbsp; }<br>
-                            <br>&nbsp;}<br>
+                            &nbsp;&nbsp; }<br>
+                            &nbsp;}<br>
                         </p>
 
                         <button type="button" class="btn btn-info" id="searching2darrayspopup" data-toggle="popover" data-placement="bottom" title="Searching 2D Arrays" html="true">Analysis</button>
@@ -481,7 +484,8 @@
               
             </p>
 
-            <p>(2) All the player names are printed as the 2D array is traversed by this nested loop. 
+            <p>(2) All the player names, with "Spurs F.C" concatenated, are printed as the 2D array is 
+                traversed by this nested loop. 
                 We are told that the array has been populated with valid instances, 
                 and that the attributes have been set.</p>
         </div>
@@ -497,10 +501,16 @@
             <p> Here, the column is fixed, and the rows change as the code iterates through the elements in the column</p>
             <p> If a search for the number is to be done successfully, here is the code that should be used,</p>
             <p>
-                int i = 0;<br> while (i &lt; employeeNumbers.length) {<br> &nbsp;&nbsp;if (employeeNumbers[<span style="color:red;">i</span>][<span style="color:red;">employeeNumbers[0].length-1</span>] == target)<br> }
-                <br> return -1;<br> &nbsp;}
+                int i = 0;<br> while (i &lt; employeeNumbers.length) {<br> &nbsp;&nbsp;if 
+                    (employeeNumbers[<span style="color:red;">i</span>][<span style="color:red;">
+                        employeeNumbers[0].length-1</span>] == target) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return i; <br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;i++;<br>
+                            &nbsp;&nbsp;}
+                <br> return -1;<br> &nbsp;
             </p>
-
+<p>(2) This code iterates through the 2D array using row-major order. If the payProcessed attrubute has not been set to true,
+    it is set to true by setter, setPayProcessed.</p>
 
         </div>
         <!-- END Popover for SEARCHING ARRAYS -->
