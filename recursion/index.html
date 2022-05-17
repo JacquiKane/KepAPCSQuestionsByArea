@@ -123,26 +123,26 @@
             <div class="col-md-4">
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" 
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" 
                         data-toggle="collapse" data-target="#recursivesolutions" data-placement="top" aria-expanded="Link to Declaring 2D arrays">
                             Recursive Solutions >>
-                        </button>
+                        </a>
                     </div>
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" 
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" 
                         data-toggle="collapse" data-target="#basecase" data-placement="top" aria-expanded="Link to accessing 2D arrays">
                             Base Case >>
-                        </button>
+                        </a>
                     </div>
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" 
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" 
                         data-toggle="collapse" data-target="#recursivecase" aria-expanded="Link to using loops with 2D arrays">
                             Recursive Case >>
-                        </button>
+                        </a>
                     </div>
 
 
@@ -150,11 +150,11 @@
 
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" 
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" 
                         data-toggle="collapse" data-target="#recursivemethods" 
                         aria-expanded="Link to calling super constructor">
                             Writing Recursive Methods >>
-                        </button>
+                        </a>
                     </div>
 
                 </section>
@@ -184,9 +184,9 @@
                             &nbsp;}
                         </p>
 
-                        <button type="button" class="btn btn-info" 
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" 
                         id="recursivesolutionspopup" data-toggle="popover" 
-                        data-placement="right" title="Recursive Solutions" html="true">Analysis</button>
+                        data-placement="right" title="Recursive Solutions" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -209,9 +209,9 @@
                         
                         
 
-                        <button type="button" class="btn btn-info" 
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" 
                         id="basecasepopup" data-toggle="popover" data-placement="right" 
-                        title="Recursive Solution, Base Case" html="true">Analysis</button>
+                        title="Recursive Solution, Base Case" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -236,9 +236,9 @@
                             (1) What's the recursive case?</p> 
 
 
-                        <button type="button" class="btn btn-info" 
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" 
                         id="recursivecasepopup" data-toggle="popover" 
-                        data-placement="top" title="Recursive Solution, Recursive Case" html="true">Analysis</button>
+                        data-placement="top" title="Recursive Solution, Recursive Case" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -253,9 +253,9 @@
                         other terms are made up of the sum of the prior 2 terms.</p>
 <p>The first 7 terms are <i>0, 1, 1, 2, 3, 5, 8 ...</i></p>
 <p class="questionmarker">(1) Create a recursive solution that returns the nth term of the Fibonacci sequence.</p>
-                        <button type="button" class="btn btn-info" 
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" 
                         id="recursivemethodspopup" data-toggle="popover" 
-                        data-placement="right" title="Writing Recursive Methods" html="true">Analysis</button>
+                        data-placement="right" title="Writing Recursive Methods" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -394,7 +394,7 @@ If the power has a value of 1, we return the num parameter, as num<sup>1</sup> i
         <script>
             $(document).ready(function() {
                 $('#recursivesolutionspopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#recursivesolutionscontent').html();
                     }
@@ -404,7 +404,7 @@ If the power has a value of 1, we return the num parameter, as num<sup>1</sup> i
         <script>
             $(document).ready(function() {
                 $('#basecasepopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#basecasecontent').html();
                     }
@@ -415,7 +415,7 @@ If the power has a value of 1, we return the num parameter, as num<sup>1</sup> i
         <script>
             $(document).ready(function() {
                 $('#recursivecasepopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#recursivecasecontent').html();
                     }
@@ -425,7 +425,7 @@ If the power has a value of 1, we return the num parameter, as num<sup>1</sup> i
         <script>
             $(document).ready(function() {
                 $('#recursivemethodspopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#recursivemethodscontent').html();
                     }

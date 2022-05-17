@@ -123,23 +123,23 @@
             <div class="col-md-4">
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#tenetsofoop" data-placement="top" aria-expanded="Link to Tenets of OOP">
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#tenetsofoop" data-placement="top" aria-expanded="Link to Tenets of OOP">
                             4 Tenets of OOP >>
-                        </button>
+                        </a>
                     </div>
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#accessingsuperclassattributes" data-placement="top" aria-expanded="Link to accessing superclass attributes">
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#accessingsuperclassattributes" data-placement="top" aria-expanded="Link to accessing superclass attributes">
                             Accessing Superclass Attributes >>
-                        </button>
+                        </a>
                     </div>
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#overridingmethods" aria-expanded="Link to polymorphism, overriding methods">
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#overridingmethods" aria-expanded="Link to polymorphism, overriding methods">
                             Polymorphism, Overriding Methods >>
-                        </button>
+                        </a>
                     </div>
 
 
@@ -147,18 +147,18 @@
 
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#callingsuperconstructor" aria-expanded="Link to calling super constructor">
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#callingsuperconstructor" aria-expanded="Link to calling super constructor">
                             Calling Superclass Constructor >>
-                        </button>
+                        </a>
                     </div>
 
                 </section>
 
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#classcastexception" aria-expanded="Link to class cast exception">
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#classcastexception" aria-expanded="Link to class cast exception">
                             Class Cast Exception >>
-                        </button>
+                        </a>
                     </div>
 
                 </section>
@@ -182,7 +182,7 @@
                             public class ChocolateChipCookie extends PlainCookie { <br> &nbsp;&nbsp;private double gramsChocolateChips;<br> // <br> }
                         </p>
 
-                        <button type="button" class="btn btn-info" id="tenetsofooppopup" data-toggle="popover" data-placement="right" title="Tenets of OOP" html="true">Analysis</button>
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" id="tenetsofooppopup" data-toggle="popover" data-placement="right" title="Tenets of OOP" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -204,7 +204,7 @@
                             <br> &nbsp;&nbsp; age = playerAge;<br>&nbsp;&nbsp; &nbsp;}
                         </p>
 
-                        <button type="button" class="btn btn-info" id="accessingsuperclassattributespopup" data-toggle="popover" data-placement="right" title="Accessing Superclass Attributes" html="true">Analysis</button>
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" id="accessingsuperclassattributespopup" data-toggle="popover" data-placement="right" title="Accessing Superclass Attributes" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -232,7 +232,7 @@
                             <br>
                         </p>
                         <p class="questionmarker">(2) 2 different object related by inheritance, respond in different ways to the same request, <i>bake</i>. What is this an example of?</p>
-                        <button type="button" class="btn btn-info" id="overridingmethodspopup" data-toggle="popover" data-placement="top" title="Overriding Methods" html="true">Analysis</button>
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" id="overridingmethodspopup" data-toggle="popover" data-placement="top" title="Overriding Methods" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -255,7 +255,7 @@
                         <p>
                             (a) PlainCookie cookieA = new PlainCookie();<br> (b) PlainCookie cookieB = new ChocolateChipCookie(); <br> (c) ChocolateChipCookie cookieC = new ChocolatechipCookie();
                         </p>
-                        <button type="button" class="btn btn-info" id="callingsuperconstructorpopup" data-toggle="popover" data-placement="bottom" title="Calling Super Constructor" html="true">Analysis</button>
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" id="callingsuperconstructorpopup" data-toggle="popover" data-placement="bottom" title="Calling Super Constructor" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -302,7 +302,7 @@
                                 MidfieldSoccerPlayer player = (MidfieldSoccerPlayer)new SoccerPlayer();
                             </p>
                         </div>
-                        <button type="button" class="btn btn-info" id="classcastingpopup" data-toggle="popover" data-placement="bottom" title="Class Cast Exception" html="true">Analysis</button>
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" id="classcastingpopup" data-toggle="popover" data-placement="bottom" title="Class Cast Exception" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -407,7 +407,7 @@
         <script>
             $(document).ready(function() {
                 $('#tenetsofooppopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#tenetsofoopcontent').html();
                     }
@@ -417,7 +417,7 @@
         <script>
             $(document).ready(function() {
                 $('#accessingsuperclassattributespopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#accessingsuperclassattributescontent').html();
                     }
@@ -428,7 +428,7 @@
         <script>
             $(document).ready(function() {
                 $('#overridingmethodspopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#overridingmethodscontent').html();
                     }
@@ -438,7 +438,7 @@
         <script>
             $(document).ready(function() {
                 $('#callingsuperconstructorpopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#callingsuperconstructorcontent').html();
                     }
@@ -448,7 +448,7 @@
         <script>
             $(document).ready(function() {
                 $('#classcastingpopup').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#classcastingcontent').html();
                     }

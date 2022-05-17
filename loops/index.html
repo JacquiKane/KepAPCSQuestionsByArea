@@ -123,34 +123,34 @@
             <div class="col-md-4">
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#numberofiterations" data-placement="top" aria-expanded="Link to class header">
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#numberofiterations" data-placement="top" aria-expanded="Link to class header">
                             Number Of Iterations >>
-                        </button>
+                        </a>
                     </div>
                 </section>
 
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 
                         buttonsize" data-toggle="collapse" data-target="#infiniteloops" aria-expanded="Link to class header">
                             Infinite Loops >>
-                        </button>
+                        </a>
                     </div>
 
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#nestedloops" aria-expanded="Link to class header">
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#nestedloops" aria-expanded="Link to class header">
                             Nested Loops >>
-                        </button>
+                        </a>
                     </div>
 
                 </section>
                 <section>
                     <div>
-                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#conditionalswithloops" aria-expanded="Nested if">
+                        <a tabindex="0"  role="button" class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#conditionalswithloops" aria-expanded="Nested if">
                             Using Conditionals With Loops >>
-                        </button>
+                        </a>
                     </div>
 
                 </section>
@@ -195,7 +195,7 @@
                             <br>&nbsp;&nbsp; }
 
                         </p>
-                        <button type="button" class="btn btn-info" id="numberofiterationscaller" data-toggle="popover" data-placement="top" title="Number Of Iterations" html="true">Analysis</button>
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" id="numberofiterationscaller" data-toggle="popover" data-placement="top" title="Number Of Iterations" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -221,7 +221,7 @@
                             </table>
                         </p>
 
-                        <button type="button" class="btn btn-info" id="infiniteloopscaller" data-toggle="popover" data-placement="top" title="Infinite Loops" html="true">Analysis</button>
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" id="infiniteloopscaller" data-toggle="popover" data-placement="top" title="Infinite Loops" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -243,7 +243,7 @@
 
                         <br> &nbsp; }
                     </p>
-                    <button type="button" class="btn btn-info" id="nestedloopscaller" data-toggle="popover" data-placement="top" title="Nested Loops" html="true">Analysis</button>
+                    <a tabindex="0"  role="button" type="button" class="btn btn-info" id="nestedloopscaller" data-toggle="popover" data-placement="top" title="Nested Loops" html="true">Analysis</a>
                 </div>
 
                 <!-- Using conditionals with loops -->
@@ -262,7 +262,7 @@
                             <br> else {<br> &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Pop");<br> &nbsp;&nbsp;}
                             <br>
                         </p>
-                        <button type="button" class="btn btn-info" id="conditionalswithloopscaller" data-toggle="popover" data-placement="bottom" title="Conditionals With Loops" html="true">Analysis</button>
+                        <a tabindex="0"  role="button" type="button" class="btn btn-info" id="conditionalswithloopscaller" data-toggle="popover" data-placement="bottom" title="Conditionals With Loops" html="true">Analysis</a>
                     </div>
                 </div>
 
@@ -401,7 +401,7 @@
         <script>
             $(document).ready(function() {
                 $('#numberofiterationscaller').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#numberofiterationspopup').html();
                     }
@@ -411,7 +411,7 @@
         <script>
             $(document).ready(function() {
                 $('#infiniteloopscaller').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#infiniteloopspopup').html();
                     }
@@ -421,7 +421,7 @@
         <script>
             $(document).ready(function() {
                 $('#nestedloopscaller').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#nestedloopspopup').html();
                     }
@@ -431,7 +431,7 @@
         <script>
             $(document).ready(function() {
                 $('#conditionalswithloopscaller').popover({
-                    html: true,
+                    html: true, trigger: 'focus',
                     content: function() {
                         return $('#conditionalswithloopspopup').html();
                     }
